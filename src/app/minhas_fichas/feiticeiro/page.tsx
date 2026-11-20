@@ -2,8 +2,9 @@
 import { Principal } from "../_components/principal";
 import { Abas } from "../_components/abas";
 import { useState } from "react";
-import { angelo } from "@/src/lib/angelo";
-import { Tecnica } from "../_components/tecnica";
+import { angelo } from "@/src/lib/FM/angelo";
+import { AbaTecnica } from "../_components/aba_tecnica";
+import { AbaHabilidades } from "../_components/aba_habilidades";
 
 export default function Home() {
 
@@ -24,17 +25,9 @@ export default function Home() {
           case 0:
             return <Principal personagem={angelo}/>
           case 1:
-            return <Tecnica personagem={angelo}/>
-            // return (
-            //   <ul className="h-full flex flex-col items-center w-full gap-5">
-            //     {feitiços.map((h, i)=>(
-            //       <Habilidade
-            //         key={i}
-            //         hab={h}
-            //       />
-            //     ))}
-            //   </ul>
-            // )
+            return <AbaTecnica personagem={angelo}/>
+          case 2:
+            return <AbaHabilidades personagem={angelo}/>
           default:
             return null
         }

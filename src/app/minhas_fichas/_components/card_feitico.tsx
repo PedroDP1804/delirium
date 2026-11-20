@@ -1,12 +1,12 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/src/components/ui/collapsible";
-import { estilo_cor } from "@/src/lib/estilos_feiticos";
-import type { Feitiço } from "@/src/lib/personagem";
+import { estilo_cor } from "@/src/lib/FM/estilos_feiticos";
+import type { Feitiço } from "@/src/lib/FM/personagem";
 
-type FeiticoProps = {
+type CardFeiticoProps = {
     hab: Feitiço,
 }
 
-export function Feitico({hab}:FeiticoProps) {
+export function CardFeitico({hab}:CardFeiticoProps) {
 
     const estilo_de_cor = estilo_cor(hab.caracteristicas.cor)
 

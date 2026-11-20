@@ -1,5 +1,5 @@
-import { atencao, atributo_letra, bonus_treinamento, cd_habilidade, defesa, modificador } from "@/src/lib/funcoes_personagem"
-import { type Personagem } from "@/src/lib/personagem"
+import { atencao, atributo_letra, bonus_treinamento, cd_habilidade, defesa, modificador } from "@/src/lib/FM/funcoes_personagem"
+import { type Personagem } from "@/src/lib/FM/personagem"
 
 export function Principal({personagem}:{personagem:Personagem}) {
 

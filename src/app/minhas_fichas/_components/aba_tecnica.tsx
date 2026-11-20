@@ -1,8 +1,8 @@
-import { atributo_letra, cd_habilidade, nome_atributo_letra } from "@/src/lib/funcoes_personagem"
-import { type Personagem } from "@/src/lib/personagem"
-import { Feitico } from "./feitico"
+import { atributo_letra, cd_habilidade, nome_atributo_letra } from "@/src/lib/FM/funcoes_personagem"
+import { type Personagem } from "@/src/lib/FM/personagem"
+import { CardFeitico } from "./card_feitico"
 
-export function Tecnica({personagem}:{personagem:Personagem}) {
+export function AbaTecnica({personagem}:{personagem:Personagem}) {
 
     if (personagem.tecnica == null)
         return (
@@ -67,20 +67,24 @@ export function Tecnica({personagem}:{personagem:Personagem}) {
 
 
             {/* Feitiços */}
-
             <div className="
                 flex justify-center items-center
-                bg-[url('/tinta.webp')] bg-local bg-cover bg-no-repeat bg-center
-                mt-20 min-w-max w-120 h-25
+                mt-20 w-full h-max
             ">
-                <h1 className="font-jujutsu-titulo text-4xl">
-                    Feitiços
-                </h1>
+                <div className="
+                    bg-[url('/tinta.webp')] bg-local bg-cover bg-no-repeat bg-center
+                    flex justify-center items-center
+                    min-w-max w-150 h-30
+                ">
+                    <h1 className="font-jujutsu-titulo text-4xl">
+                        Feitiços
+                    </h1>
+                </div>
             </div>
 
              <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
                 {personagem.tecnica.feiticos.map((h, i)=>(
-                    <Feitico
+                    <CardFeitico
                         key={i}
                         hab={h}
                     />

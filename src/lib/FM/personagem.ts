@@ -21,10 +21,13 @@ export type Personagem = {
     bonus: {
         atencao: Bonus[],
         defesa: Bonus[],
+        deslocamento: Bonus[],
+        iniciativa: Bonus[],
         cd_especializacao: Bonus[],
     },
     tecnica: Tecnica|null,
     pericias: Pericias,
+    habilidades: Habilidade[]
 }
 
 export type AtributoChar = "F"|"D"|"C"|"I"|"S"|"P"
@@ -69,6 +72,13 @@ export type Feitiço = {
         narrativa: string,
     },
     observacoes: string[],
+}
+
+export type Habilidade = {
+    nome: string,
+    tipo: string,
+    descricao:string,
+    obtida_no_nivel: number,
 }
 
 export type Caracteristicas = {

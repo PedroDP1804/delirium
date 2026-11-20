@@ -9,26 +9,33 @@ export function estilo_cor(cor:string):EstiloCor {
 
         case "Vermelho":
             return {
-                texto_cor: "text-[#d40000]",
+                texto_cor: "text-[#d40000] text-shadow-lg/20",
                 bg_nome: "bg-[url(/bg-vermelho.png)]",
                 bg_secoes: "bg-[url(/bg-vermelho.png)]",
             }
 
         case "Verde":
             return {
-                texto_cor: "text-[#00e927]",
+                texto_cor: "text-[#00e927] text-shadow-lg/60",
                 bg_nome: "bg-[url(/bg-verde.png)]",
                 bg_secoes: "bg-[url(/bg-verde.png)]",
             }
 
         case "Azul":
             return {
-                texto_cor: "text-[#1028ff]",
+                texto_cor: "text-[#1028ff] text-shadow-lg/30",
                 bg_nome: "bg-[url(/bg-azul.png)]",
                 bg_secoes: "bg-[url(/bg-azul.png)]",
             }
 
-        // ... Violeta, Rosa, Marrom, Laranja, Amarelo
+        case "Amarelo":
+            return {
+                texto_cor: "text-[#ffe600] text-shadow-lg/50",
+                bg_nome: "bg-[url(/bg-amarelo.png)]",
+                bg_secoes: "bg-[url(/bg-amarelo.png)]",
+            }
+
+        // ... Violeta, Rosa, Marrom, Laranja
 
         case "Branco":
             return {
