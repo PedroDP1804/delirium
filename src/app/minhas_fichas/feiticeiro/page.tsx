@@ -2,7 +2,7 @@
 import { Principal } from "../_components/principal";
 import { Abas } from "../_components/abas";
 import { useState } from "react";
-import { angelo } from "@/src/lib/personagem";
+import { angelo } from "@/src/lib/angelo";
 import { Tecnica } from "../_components/tecnica";
 
 export default function Home() {
