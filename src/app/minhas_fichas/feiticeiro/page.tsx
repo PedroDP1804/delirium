@@ -6,6 +6,7 @@ import { angelo } from "@/src/lib/FM/angelo";
 import { AbaTecnica } from "../_components/aba_tecnica";
 import { AbaHabilidades } from "../_components/aba_habilidades";
 import { AbaAptidões } from "../_components/aba_aptidoes";
+import { AbaTestesEPericias } from "../_components/aba_testes_pericias";
 
 export default function Home() {
 
@@ -31,6 +32,8 @@ export default function Home() {
             return <AbaHabilidades personagem={angelo}/>
           case 3:
             return <AbaAptidões personagem={angelo}/>
+          case 4:
+            return <AbaTestesEPericias personagem={angelo}/>
           default:
             return null
         }

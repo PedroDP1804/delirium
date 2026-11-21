@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist, Lato, Marck_Script } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { TooltipProvider } from "../components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -35,9 +36,9 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${lato.variable} ${marck_script.variable}`}>
       <body className="h-full">
         <TRPCReactProvider>
-          <div className="h-full">
+          <TooltipProvider>
             {children}
-          </div>
+          </TooltipProvider>
         </TRPCReactProvider>
       </body>
     </html>

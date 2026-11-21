@@ -112,7 +112,50 @@ export type Maxima = {
     descricao_narrativa: string,
 }
 
+export type Treinamento = "D"|"T"|"M"
+
 export type Pericias = {
-    percepcao: number,
-    //...
+    acrobacia: Treinamento,
+    atletismo: Treinamento,
+    direção: Treinamento,
+    enganação: Treinamento,
+    feitiçaria: Treinamento,
+    furtividade: Treinamento,
+    história: Treinamento,
+    intimidação: Treinamento,
+    intuição: Treinamento,
+    investigação: Treinamento,
+    medicina: Treinamento,
+    ocultismo: Treinamento,
+    ofício: Treinamento,
+    percepção: Treinamento,
+    performance: Treinamento,
+    persuasão: Treinamento,
+    prestidigitação: Treinamento,
+    sobrevivência: Treinamento,
+    tecnologia: Treinamento,
+    teologia: Treinamento,
+}
+
+export const pericias_atributos = {
+    "Acrobacia": "D",
+    "Atletismo": "F",
+    "Direção": "S",
+    "Enganação": "P",
+    "Feitiçaria": "I",
+    "Furtividade": "D",
+    "História": "I",
+    "Intimidação": "P",
+    "Intuição": "S",
+    "Investigação": "I",
+    "Medicina": "S",
+    "Ocultismo": "S",
+    "Ofício": "I",
+    "Percepção": "S",
+    "Performance": "P",
+    "Persuasão": "P",
+    "Prestidigitação": "D",
+    "Sobrevivência": "S",
+    "Tecnologia": "I",
+    "Teologia": "I",
 }

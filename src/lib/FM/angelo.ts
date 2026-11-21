@@ -194,7 +194,26 @@ export const angelo:Personagem = {
         maxima: null,
     },
     pericias: {
-        percepcao: 0
+        acrobacia: "D",
+        atletismo: "D",
+        direção: "D",
+        enganação: "D",
+        feitiçaria: "D",
+        furtividade: "D",
+        história: "D",
+        intimidação: "D",
+        intuição: "D",
+        investigação: "D",
+        medicina: "D",
+        ocultismo: "D",
+        ofício: "D",
+        percepção: "D",
+        performance: "D",
+        persuasão: "D",
+        prestidigitação: "D",
+        sobrevivência: "D",
+        tecnologia: "D",
+        teologia: "D",
     },
     habilidades: [
 
