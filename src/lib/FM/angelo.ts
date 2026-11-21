@@ -22,13 +22,48 @@ const feiticos_angelo:Feitiço[] = [
                         + "\n\t\t\t\t-Amarelo: Amarelo está associado a chamar a atenção ou induzir a ficar atento. Você aprimora a capacidade de atenção da sua mente, recebendo +1 em Percepção e em Testes de Resistência de Astúcia."
                         + "\n\t\t\t\t-Violeta: É a maior frequência no espectro da luz visível, e também a que carrega mais energia. Você sobrecarrega seus Feitiços e Aptidões com energia púrpura, causando +4 de dano em Feitiços e Aptidões de dano."
                         + "\n\t\t\t\t-Marrom: Essa cor é associada a diversos elementos de terreno: solo, lama, buracos, troncos e raízes, etc. Você se adapta a esses elementos, ignorando terreno difícil."
-                        + "\n\t\t\t\t-Branco: Uma cor espeical, a mistura de todas as cores-luz - ou especificamente das cores Vermelho, Verde e Azul, no modelo RGB. Se estiver com essas três cores infundidas, você pode gastar uma Ação Bônus para misturá-las, formando e infundindo a cor Branco. Você se sobrecarrega com todas as cores, uma amálgama de possibilidades, recebendo todos os benefícios das outras cores, mas fica Desorientado e Desprevinido até dissipar o efeito. Se preferir, pode não receber esses efeitos mas ainda manter a cor infundida."
+                        + "\n\t\t\t\t-Branco: Uma cor especial, a mistura de todas as cores-luz - ou especificamente das cores Vermelho, Verde e Azul, no modelo RGB. Se estiver com essas três cores infundidas, você pode gastar uma Ação Bônus para misturá-las, formando e infundindo a cor Branco. Você se sobrecarrega com todas as cores, uma amálgama de possibilidades, recebendo todos os benefícios das outras cores, mas fica Desorientado e Desprevinido até dissipar o efeito. Alternativamente, você pode infundir a cor branca diretamente (como Toque / Ação Livre), mas não receber esses efeitos, nem negativos nem positivos; alguns Feitiços Brancos não podem ser conjurados com esse método."
                         + "\n\n\t\t\tUma mesma cor de um mesmo objeto só pode ser extraída uma vez por cena. Você pode ter até 3 cores infundidas simultaneamente, mas você gasta 1 PE por rodada se tiver duas e 3 PE por rodada se tiver três. Bônus de mesma cor não acumulam. Todas as cores infundidas são perdidas no fim da cena. Você pode descartar uma cor a qualquer momento como ação livre.",
             narrativa: "\t\t\t"
         },
         observacoes: [
             "O feitiço tem um requisito fácil, que é absorver a cor de um objeto, nisso ela ganha +2PE (que não aumentam o custo, mas permite ela ser mais forte), se tornando equivalente a um feitiço de 1o nivel. Eu segui as tabelas a partir da página 217 do livro pra balancear os efeitos, usando nivel 1 e duração duradoura/sustentada.",
             "O branco é um Voto Próprio Médio Temporário, por isso é mais forte",
+        ]
+    },
+    {
+        nome: "Pincelar",
+        nivel: 1,
+        custo: 1,
+        caracteristicas: {
+            cor: "Branco",
+            conjuracao: "Ação Comum (ou Ação Bônus / Reação)",
+            alcance: "12m",
+            requisitos: ["Médio, +4PE/+2d | Ter a cor Branco infundida",]
+        },
+        descricao: {
+            mecanica:   "\t\t\tVocê pinta em pleno ar qualquer coisa que imaginar, trazendo-a à realidade."
+                        + "\n\t\t\t\t• No geral, as propriedades da coisa pintada se mantêm, como peso, textura, aparência, etc."
+                        + "\n\t\t\t\t• Você pode pintar uma única coisa de até tamanho Enorme (de OPRPG pq F&M n tem tamanho)."
+                        + "\n\t\t\t\t• Você só pode pintar em espaços desocupados."
+                        + "\n\t\t\t\t• A Pintura dura até o fim da cena."
+                        + "\n\t\t\t\t• Qualquer dano proveniente de uma Pintura está limitado a 4d8, o tipo pode variar."
+                        + "\n\t\t\t\t• Se a Pintura for equivalente a algum item, ele dever de até Custo 1."
+                        + "\n\t\t\t\t• Se a Pintura for equivalente a um Shikigami, ele deve ser de até Quarto Grau."
+                        + "\n\t\t\t\t• A Pintura ainda é feita de tinta, então Pinturas que forem estruturas ou objetos têm 10 PV (ou as partes delas, se forem muito grandes)."
+                        + "\n\n\t\t\tEste Feitiço pode ser conjurado como Ação Bônus ou Reação, mas nesses casos a capacidade dele diminui em uma e duas categorias, respectivamente. Isto é:"
+                        + "\n\t\t\t\t• Enorme > Grande > Médio"
+                        + "\n\t\t\t\t• Cena > Três Rodadas > Uma Rodada"
+                        + "\n\t\t\t\t• 4d8 > 2d8 > Não pode causar dano"
+                        + "\n\t\t\t\t• Custo 1 > Custo 0 > Custo 0"
+                        + "\n\t\t\t\t• Quarto Grau > Quarto Grau com -1 Ações/Características > Não pode ser equivalente a um Shikigami"
+                        + "\n\t\t\t\t• 10 PV > 5 PV > 1 PV"
+                        ,
+            narrativa: "\t\t\tO mundo todo é minha tela em branco."
+        },
+        observacoes: [
+            "(2d) (+2d req.)",
+            "Marca Registrada reduz o custo em 1 PE"
         ]
     },
     {
@@ -64,26 +99,6 @@ const feiticos_angelo:Feitiço[] = [
             narrativa: "\t\t\tEmbora possa se pensar que espelhos são brancos, prateados ou cinzas, eles na verdade refletem a luz verde ligeiramente melhor do que qualquer outra cor, fazendo com que sejam levemente esverdeados, apesar de ser difícil perceber. Isso acontece porque o vidro comum usado na fabricação absorve levemente os outros espectros de luz e reflete com mais intensidade a faixa do verde."
         },
         observacoes: ["(12m) (+4PE req. -> +24m) (+4PE req. -> +24m) (+2 melhorias de ritual ação completa, usadas no feitiço copiado)"]
-    },
-    {
-        nome: "Dispersão Celeste",
-        nivel: 1,
-        custo: 1,
-        caracteristicas: {
-            cor: "Azul",
-            conjuracao: "Ação Comum",
-            alcance: "12m",
-            alvo: undefined,
-            requisitos: ["Médio, +4PE/+2d | Ter a cor Azul infundida",]
-        },
-        descricao: {
-            mecanica: "\t\t\tVocê emite sua Energia Amaldiçoada com mesmo comprimento de onda da luz azul, fazendo com que ela seja espalhada pela atmosfera e atinja uma área alvo. Escolha um ponto no alcance, seres a até 4,5m do ponto escolhido devem fazer um Teste de Resistência de Reflexos, sofrendo 4d8 de dano Energético se falharem ou metade disso, caso contrário.",
-            narrativa: "\t\t\tA dispersão de Rayleigh é a dispersão da luz ou qualquer outra radiação eletromagnética por partículas muito menores que o comprimento de onda dos fótons dispersados. Ocorre quando a luz viaja por sólidos e líquidos transparentes, mas se observa com maior frequência nos gases. A dispersão de Rayleigh da luz solar na atmosfera é a principal razão pela qual o céu é azul."
-        },
-        observacoes: [
-            "(2d) (+2d req.)",
-            "Marca Registrada reduz o custo em 1 PE"
-        ]
     },
     {
         nome: "Brilho Acalentador",
@@ -193,7 +208,7 @@ export const angelo:Personagem = {
         {
             nome: "Marca Registrada",
             tipo: "Característica de Origem (Inato)",
-            descricao: "\t\t\tSua técnica é inata e exclusiva para si, o que o torna naturalmente mais familiar com ela. Sendo capaz de usá-la de diferentes formas, uma delas se destaca como a sua marca registrada. Você recebe um Feitiço adicional [Dispersão Celeste], o qual terá o seu custo reduzido em 1 PE.",
+            descricao: "\t\t\tSua técnica é inata e exclusiva para si, o que o torna naturalmente mais familiar com ela. Sendo capaz de usá-la de diferentes formas, uma delas se destaca como a sua marca registrada. Você recebe um Feitiço adicional [Pincelar], o qual terá o seu custo reduzido em 1 PE.",
             obtida_no_nivel: 1
         },
         {
@@ -263,6 +278,23 @@ export const angelo:Personagem = {
 //Hardcoded por enquanto (TO-DO)
 export const feiticos_futuros:Feitiço[] = [
     {
+        nome: "Dispersão Celeste",
+        nivel: 1,
+        custo: 2,
+        caracteristicas: {
+            cor: "Azul",
+            conjuracao: "Ação Comum",
+            alcance: "12m",
+            alvo: undefined,
+            requisitos: ["Médio, +4PE/+2d | Ter a cor Azul infundida",]
+        },
+        descricao: {
+            mecanica: "\t\t\tVocê emite sua Energia Amaldiçoada com mesmo comprimento de onda da luz azul, fazendo com que ela seja espalhada pela atmosfera e atinja uma área alvo. Escolha um ponto no alcance, seres a até 4,5m do ponto escolhido devem fazer um Teste de Resistência de Reflexos, sofrendo 4d8 de dano Energético se falharem ou metade disso, caso contrário.",
+            narrativa: "\t\t\tA dispersão de Rayleigh é a dispersão da luz ou qualquer outra radiação eletromagnética por partículas muito menores que o comprimento de onda dos fótons dispersados. Ocorre quando a luz viaja por sólidos e líquidos transparentes, mas se observa com maior frequência nos gases. A dispersão de Rayleigh da luz solar na atmosfera é a principal razão pela qual o céu é azul."
+        },
+        observacoes: ["(2d) (+2d req.)"]
+    },
+    {
         nome: "Golden Hour",
         nivel: 1,
         custo: 2,
@@ -282,6 +314,7 @@ export const feiticos_futuros:Feitiço[] = [
             "Nem tem dado sla, foi por vibes"
         ]
     },
+
     // {
     //     nome: "Nome",
     //     nivel: 1,
@@ -291,6 +324,7 @@ export const feiticos_futuros:Feitiço[] = [
     //         conjuracao: "Ação Comum",
     //         alcance: "6m",
     //         alvo: "Uma Criatura",
+    //         duracao: "",
     //         requisitos: ["Médio, +4PE/+2d | Ter a cor Vermelho infundida",]
     //     },
     //     descricao: {

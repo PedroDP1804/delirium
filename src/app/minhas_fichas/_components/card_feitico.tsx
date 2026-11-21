@@ -53,7 +53,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                     <Collapsible className="w-full flex flex-col">
                     
                         <CollapsibleTrigger>
-                            <h2 className={`text-left indent-6 h-full w-full py-2 text-white ${estilo_de_cor.bg_secoes} border-y border-black cursor-pointer font-bold text-lg`}>
+                            <h2 className={`text-shadow-md/60 text-left indent-6 h-full w-full py-2 text-white ${estilo_de_cor.bg_secoes} border-y border-black cursor-pointer font-bold text-lg`}>
                                 Descrição
                             </h2>
                         </CollapsibleTrigger>
@@ -78,7 +78,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                     <Collapsible className="w-full bg-blue-200 flex flex-col">
                     
                         <CollapsibleTrigger>
-                            <h2 className={`text-left indent-6 h-full w-full py-2 text-white ${estilo_de_cor.bg_secoes} border-y border-black cursor-pointer font-bold text-lg`}>
+                            <h2 className={`text-shadow-md/60 text-left indent-6 h-full w-full py-2 text-white ${estilo_de_cor.bg_secoes} border-y border-black cursor-pointer font-bold text-lg`}>
                                 Observações
                             </h2>
                         </CollapsibleTrigger>
