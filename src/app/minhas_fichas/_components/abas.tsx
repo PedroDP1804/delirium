@@ -19,16 +19,20 @@ export function Abas({funcao, atual}:AbasProps) {
             indice: 2,
         },
         {
-            texto: "Testes & Perícias",
+            texto: "Aptidões",
             indice: 3,
         },
         {
-            texto: "Inventário",
+            texto: "Testes & Perícias",
             indice: 4,
         },
         {
-            texto: "Descrição",
+            texto: "Inventário",
             indice: 5,
+        },
+        {
+            texto: "Descrição",
+            indice: 6,
         },
     ]
 

@@ -1,7 +1,7 @@
 import { atencao, atributo_letra, bonus_treinamento, cd_habilidade, defesa, modificador } from "@/src/lib/FM/funcoes_personagem"
 import { type Personagem } from "@/src/lib/FM/personagem"
 
-export function Principal({personagem}:{personagem:Personagem}) {
+export function AbaPrincipal({personagem}:{personagem:Personagem}) {
 
     return (
         <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">

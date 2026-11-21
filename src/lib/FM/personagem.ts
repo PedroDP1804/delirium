@@ -27,7 +27,15 @@ export type Personagem = {
     },
     tecnica: Tecnica|null,
     pericias: Pericias,
-    habilidades: Habilidade[]
+    habilidades: Habilidade[],
+    aptidao: {
+        aura: number,
+        controle_leitura: number,
+        barreira: number,
+        dominio: number,
+        energia_reversa: number,
+        aptidoes: Habilidade[]
+    }
 }
 
 export type AtributoChar = "F"|"D"|"C"|"I"|"S"|"P"

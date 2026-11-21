@@ -1,10 +1,11 @@
 "use client"
-import { Principal } from "../_components/principal";
+import { AbaPrincipal } from "../_components/aba_principal";
 import { Abas } from "../_components/abas";
 import { useState } from "react";
 import { angelo } from "@/src/lib/FM/angelo";
 import { AbaTecnica } from "../_components/aba_tecnica";
 import { AbaHabilidades } from "../_components/aba_habilidades";
+import { AbaAptidões } from "../_components/aba_aptidoes";
 
 export default function Home() {
 
@@ -23,11 +24,13 @@ export default function Home() {
       {(()=>{
         switch (aba) {
           case 0:
-            return <Principal personagem={angelo}/>
+            return <AbaPrincipal personagem={angelo}/>
           case 1:
             return <AbaTecnica personagem={angelo}/>
           case 2:
             return <AbaHabilidades personagem={angelo}/>
+          case 3:
+            return <AbaAptidões personagem={angelo}/>
           default:
             return null
         }

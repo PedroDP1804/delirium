@@ -283,7 +283,25 @@ export const angelo:Personagem = {
         //     descricao: "\t\t\t",
         //     obtida_no_nivel: 2
         // },
-    ]
+    ],
+    aptidao: {
+        aura: 0,
+        controle_leitura: 0,
+        barreira: 1,
+        dominio: 0,
+        energia_reversa: 0,
+        aptidoes: [
+            {
+                nome: "Técnicas de Barreira",
+                tipo: "Barreira",
+                descricao:  "\t\t\tVocê se torna capaz de erguer e manipular barreiras, as quais podem ser usadas para defender o usuário ou prender oponentes. Você pode criar, como uma Ação Comum, até 6 paredes ao seu redor, com cada parede custando 1 ponto de energia amaldiçoada."
+                            + "\n\t\t\tCada parede erguida tem 1,5 metros de tamanho, e vida igual a 5 + seu nível de aptidão em Barreiras multiplicado por metade do seu nível de personagem."
+                            + "\n\t\t\tPodem servir tanto como obstáculo como uma maneira de prender seus inimigos. Você pode as manipular e mover usando outra ação comum."
+                            + "\n[Pré-Requisito: Nível de Aptidão em Barreira 1]",
+                obtida_no_nivel: 2
+            }
+        ]
+    }
 }
 
 
