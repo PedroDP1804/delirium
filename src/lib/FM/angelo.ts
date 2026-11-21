@@ -22,7 +22,7 @@ const feiticos_angelo:Feitiço[] = [
                         + "\n\t\t\t\t-Amarelo: Amarelo está associado a chamar a atenção ou induzir a ficar atento. Você aprimora a capacidade de atenção da sua mente, recebendo +1 em Percepção e em Testes de Resistência de Astúcia."
                         + "\n\t\t\t\t-Violeta: É a maior frequência no espectro da luz visível, e também a que carrega mais energia. Você sobrecarrega seus Feitiços e Aptidões com energia púrpura, causando +4 de dano em Feitiços e Aptidões de dano."
                         + "\n\t\t\t\t-Marrom: Essa cor é associada a diversos elementos de terreno: solo, lama, buracos, troncos e raízes, etc. Você se adapta a esses elementos, ignorando terreno difícil."
-                        + "\n\t\t\t\t-Branco: Uma cor especial, a mistura de todas as cores-luz - ou especificamente das cores Vermelho, Verde e Azul, no modelo RGB. Se estiver com essas três cores infundidas, você pode gastar uma Ação Bônus para misturá-las, formando e infundindo a cor Branco. Você se sobrecarrega com todas as cores, uma amálgama de possibilidades, recebendo todos os benefícios das outras cores, mas fica Desorientado e Desprevinido até dissipar o efeito. Alternativamente, você pode infundir a cor branca diretamente (como Toque / Ação Livre), mas não receber esses efeitos, nem negativos nem positivos; alguns Feitiços Brancos não podem ser conjurados com esse método."
+                        + "\n\t\t\t\t-Branco: Uma cor especial, a mistura de todas as cores-luz - ou especificamente das cores Vermelho, Verde e Azul, no modelo RGB. Se estiver com essas três cores infundidas, você pode gastar uma Ação Bônus para misturá-las, formando e infundindo a cor Branco. Você se sobrecarrega com todas as cores, uma amálgama de possibilidades, recebendo todos os benefícios das outras cores, mas fica Desorientado e Desprevinido até dissipar o efeito. Alternativamente, você pode infundir a cor branca diretamente (como Toque e Ação Bônus), mas não receber esses efeitos, nem negativos nem positivos; alguns Feitiços Brancos não podem ser conjurados com esse método."
                         + "\n\n\t\t\tUma mesma cor de um mesmo objeto só pode ser extraída uma vez por cena. Você pode ter até 3 cores infundidas simultaneamente, mas você gasta 1 PE por rodada se tiver duas e 3 PE por rodada se tiver três. Bônus de mesma cor não acumulam. Todas as cores infundidas são perdidas no fim da cena. Você pode descartar uma cor a qualquer momento como ação livre.",
             narrativa: "\t\t\t"
         },
@@ -39,7 +39,10 @@ const feiticos_angelo:Feitiço[] = [
             cor: "Branco",
             conjuracao: "Ação Comum (ou Ação Bônus / Reação)",
             alcance: "12m",
-            requisitos: ["Médio, +4PE/+2d | Ter a cor Branco infundida",]
+            requisitos: [
+                "Médio, +4PE/+2d | Ter a cor Branco infundida",
+                "Médio, +4PE/+2d | Estar empunhando o Pincel Amaldiçoado",                
+            ]
         },
         descricao: {
             mecanica:   "\t\t\tVocê pinta em pleno ar qualquer coisa que imaginar, trazendo-a à realidade."
@@ -48,21 +51,26 @@ const feiticos_angelo:Feitiço[] = [
                         + "\n\t\t\t\t• Você só pode pintar em espaços desocupados."
                         + "\n\t\t\t\t• A Pintura dura até o fim da cena."
                         + "\n\t\t\t\t• Qualquer dano proveniente de uma Pintura está limitado a 4d8, o tipo pode variar."
-                        + "\n\t\t\t\t• Se a Pintura for equivalente a algum item, ele dever de até Custo 1."
-                        + "\n\t\t\t\t• Se a Pintura for equivalente a um Shikigami, ele deve ser de até Quarto Grau."
-                        + "\n\t\t\t\t• A Pintura ainda é feita de tinta, então Pinturas que forem estruturas ou objetos têm 10 PV (ou as partes delas, se forem muito grandes)."
+                        + "\n\t\t\t\t• Se a Pintura for equivalente a algum item, ele dever de até Custo 2."
+                        + "\n\t\t\t\t• Se a Pintura for equivalente a um Shikigami, ele deve ser de até Terceiro Grau."
+                        + "\n\t\t\t\t• A Pintura ainda é feita de tinta, então Pinturas que forem estruturas, shikigamis ou objetos têm 15 PV (ou as partes delas, se forem muito grandes)."
                         + "\n\n\t\t\tEste Feitiço pode ser conjurado como Ação Bônus ou Reação, mas nesses casos a capacidade dele diminui em uma e duas categorias, respectivamente. Isto é:"
                         + "\n\t\t\t\t• Enorme > Grande > Médio"
                         + "\n\t\t\t\t• Cena > Três Rodadas > Uma Rodada"
                         + "\n\t\t\t\t• 4d8 > 2d8 > Não pode causar dano"
-                        + "\n\t\t\t\t• Custo 1 > Custo 0 > Custo 0"
-                        + "\n\t\t\t\t• Quarto Grau > Quarto Grau com -1 Ações/Características > Não pode ser equivalente a um Shikigami"
-                        + "\n\t\t\t\t• 10 PV > 5 PV > 1 PV"
+                        + "\n\t\t\t\t• Custo 2 > Custo 1 > Custo 0"
+                        + "\n\t\t\t\t• Terceiro Grau > Quarto Grau > Quarto Grau com -1 Ações/Características"
+                        + "\n\t\t\t\t• 15 PV > 10 PV > 5 PV"
+                        + "\n\t\t\tConjurar com ações menores diminui o tempo disponível para pintar, limitando a Pintura a imagens mais simples. Por exemplo, seria inviável pintar fielmente uma pessoa com uma Reação, mas talvez seria viável pintar um boneco de palito."
                         ,
             narrativa: "\t\t\tO mundo todo é minha tela em branco."
         },
         observacoes: [
-            "(2d) (+2d req.)",
+            "O balanceamento foi meio no instinto.",
+            "O dano 4d8 e os PV 15 coloquei assim pq mais acho q seria mt OP.",
+            "Pros itens e shikigamis, eu considerei um nível acima na tabela do livro, pq tem 2 requisitos médios e a vida e dano são limitados independente do nível",
+            "O tamanho e duração foi só no instinto tbm",
+            "O Feitiço parece bem forte, mas tem dois requisitos médios e ainda é um Feitiço Branco, ent dá um desconto",
             "Marca Registrada reduz o custo em 1 PE"
         ]
     },
@@ -146,11 +154,11 @@ export const angelo:Personagem = {
     grau: 4,
     atributo_cd: "I",
     atributos: {
-        forca: 9,
+        forca: 10,
         destreza: 14,
         constituicao: 10,
-        inteligencia: 17,
-        sabedoria: 13,
+        inteligencia: 16,
+        sabedoria: 14,
         presenca: 12,
     },
     stats: {
@@ -174,7 +182,11 @@ export const angelo:Personagem = {
     },
     tecnica: {
         nome: "Aquarela",
-        descricao: "A técnica permite conjurar fenômenos, manifestar características e aplicar efeitos associados diretamente a cores específicas, seja por aspectos do universo ou pela concepção humana.",
+        descricao: "\t\t\tA técnica permite conjurar fenômenos, manifestar características e aplicar efeitos associados diretamente a cores específicas, seja por aspectos do universo ou pela concepção humana."
+                    + "\n\t\t\tComo parte da técnica, você recebe também os seguintes itens:"
+                    + "\n\t\t\t\t• Um tablete retangular com vários círculos coloridos, feitos de acrílico, similar a uma paleta de cores. Ocupa meio espaço."
+                    + "\n\t\t\t\t• Um Pincel Amaldiçoado, imbuído com sua Técnica, usado para conjurar Pincelar. Ocupa meio espaço"
+                    ,
         atributo: "I",
         bonus_cd: [],
         feiticos: feiticos_angelo,
@@ -295,7 +307,7 @@ export const feiticos_futuros:Feitiço[] = [
         observacoes: ["(2d) (+2d req.)"]
     },
     {
-        nome: "Golden Hour",
+        nome: "Hora Dourada",
         nivel: 1,
         custo: 2,
         caracteristicas: {
@@ -305,7 +317,7 @@ export const feiticos_futuros:Feitiço[] = [
             requisitos: ["Médio, +4PE/+2d | Ter a cor Amarelo infundida",]
         },
         descricao: {
-            mecanica: "\t\t\tEssa é a hora perfeita para produzir sua obra-prima. Até o fim do seu próximo turno, todos os Feitiços que você conjurar (exceto este) são aprimorados, potencializando o efeito em o equivalente a +4 PE e recebendo uma melhoria de ritual.",
+            mecanica: "\t\t\tEssa é a hora perfeita para produzir sua obra-prima. Até o fim do seu próximo turno, todos os Feitiços que você conjurar (exceto este) são aprimorados, potencializando o efeito em o equivalente a +4 PE / +2d e recebendo uma melhoria de ritual. Só pode ser usado uma vez por cena, e até duas vezes por dia",
             narrativa:  "\t\t\tA golden hour é o período do dia logo após o nascer do sol ou pouco antes do pôr do sol, quando a luz natural fica mais suave, difusa e 'dourada', e é muito valorizada para fotografias, vídeos e pinturas por proporcionar belas imagens."
                         + "\n\t\t\tOcorre porque, com o Sol no horizonte, a luz atravessa mais atmosfera, perdendo mais os tons azulados e sobrando os tons de amarelo, laranja e vermelho."
         },

@@ -8,7 +8,7 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
     const niveis = Array(personagem.nivel).fill(0)
 
     return (
-        <section className="w-[70%]">
+        <section className="w-[70%] flex flex-col items-center">
 
             <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
                 <div className="bg-white poligono1 h-full">
@@ -53,8 +53,8 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
             </div>
 
 
-            {/* Feitiços */}
-            <ul>
+            {/* Habilidades */}
+            <ul className="w-full">
                 {niveis.map((_, num)=>(
                     <div key={num}>
 

@@ -15,7 +15,7 @@ export function AbaTecnica({personagem}:{personagem:Personagem}) {
         )
 
     return (
-        <section>
+        <section className="w-[70%] flex flex-col items-center">
 
             <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
                 <div className="bg-white poligono1 h-full">
@@ -30,11 +30,11 @@ export function AbaTecnica({personagem}:{personagem:Personagem}) {
                     {/* Descrição */}
                     <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
 
-                        <h1 className="pl-5 font-jujutsu-titulo text-2xl">
+                        <h1 className="pl-3 font-jujutsu-titulo text-2xl">
                             Descrição
                         </h1>
 
-                        <p className="font-jujutsu indent-10">
+                        <p className="font-jujutsu whitespace-pre-wrap">
                             {personagem.tecnica?.descricao}
                         </p>
 
