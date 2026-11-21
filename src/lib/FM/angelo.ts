@@ -98,7 +98,8 @@ const feiticos_angelo:Feitiço[] = [
         },
         descricao: {
             mecanica: "\t\t\tVocê replica o brilho aconchegante do Sol num ponto acima de você, reconfortando seus aliados. Todas as Criaturas escolhidas no alcance recebem 4d6 PV Temporários.",
-            narrativa: "\t\t\tO Sol na verdade é branco, mas o vemos amarelo porque a atmosfera espalha a luz azul e violeta que ele emite, e o que sobra é uma cor amarelada."
+            narrativa:  "\t\t\tNada como sentir sobre a pele a luz quente do amanhecer, após uma noite fria e escura."
+                        + "\n\t\t\tO Sol na verdade é branco, mas o vemos amarelo porque a atmosfera espalha a luz azul e violeta que ele emite, e o que sobra é uma cor amarelada."
         },
         observacoes: ["(2d) (+2d req.)"]
     },
@@ -257,3 +258,45 @@ export const angelo:Personagem = {
         // },
     ]
 }
+
+
+//Hardcoded por enquanto (TO-DO)
+export const feiticos_futuros:Feitiço[] = [
+    {
+        nome: "Golden Hour",
+        nivel: 1,
+        custo: 2,
+        caracteristicas: {
+            cor: "Amarelo",
+            conjuracao: "Ação Bônus",
+            alvo: "Próprio",
+            requisitos: ["Médio, +4PE/+2d | Ter a cor Amarelo infundida",]
+        },
+        descricao: {
+            mecanica: "\t\t\tEssa é a hora perfeita para produzir sua obra-prima. Até o fim do seu próximo turno, todos os Feitiços que você conjurar (exceto este) são aprimorados, potencializando o efeito em o equivalente a +4 PE e recebendo uma melhoria de ritual.",
+            narrativa:  "\t\t\tA golden hour é o período do dia logo após o nascer do sol ou pouco antes do pôr do sol, quando a luz natural fica mais suave, difusa e 'dourada', e é muito valorizada para fotografias, vídeos e pinturas por proporcionar belas imagens."
+                        + "\n\t\t\tOcorre porque, com o Sol no horizonte, a luz atravessa mais atmosfera, perdendo mais os tons azulados e sobrando os tons de amarelo, laranja e vermelho."
+        },
+        observacoes: [
+            "(2d) (+2d req.)",
+            "Nem tem dado sla, foi por vibes"
+        ]
+    },
+    // {
+    //     nome: "Nome",
+    //     nivel: 1,
+    //     custo: 2,
+    //     caracteristicas: {
+    //         cor: "Cor",
+    //         conjuracao: "Ação Comum",
+    //         alcance: "6m",
+    //         alvo: "Uma Criatura",
+    //         requisitos: ["Médio, +4PE/+2d | Ter a cor Vermelho infundida",]
+    //     },
+    //     descricao: {
+    //         mecanica: "\t\t\t",
+    //         narrativa: "\t\t\t"
+    //     },
+    //     observacoes: ["(2d) (+2d req.)"]
+    // },
+]
