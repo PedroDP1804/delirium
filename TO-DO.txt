@@ -1,5 +1,4 @@
 >Abas do Personagem:
-    -Testes & Perícias (Outros Testes)
     -Inventário
     -Descrição (na Principal agr)
 >Filtro por cor na aba Feitiços

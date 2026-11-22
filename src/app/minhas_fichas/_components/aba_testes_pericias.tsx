@@ -1,6 +1,7 @@
 import { perícias_atributos, resistencia_atributos, type Personagem } from "@/src/lib/FM/personagem";
 import { InfoPericia } from "./valores_calculados/info_pericia";
 import { InfoTesteResistencia } from "./valores_calculados/info_teste_resistencia";
+import { SeçãoAtaques } from "./valores_calculados/secao_ataques";
 
 
 export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
@@ -45,6 +46,7 @@ export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
 
                 </div>
 
+
                 {/* Testes de Resistência */}
                 <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
 
@@ -63,6 +65,18 @@ export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
 
 
                     </div>
+
+                </div>
+
+
+                {/* Ataques */}
+                <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
+
+                    <h1 className="pl-3 font-jujutsu-titulo text-3xl">
+                        Jogadas de Ataque
+                    </h1>
+
+                    <SeçãoAtaques personagem={personagem}/>
 
                 </div>
 
