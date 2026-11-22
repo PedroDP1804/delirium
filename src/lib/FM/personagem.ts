@@ -7,23 +7,31 @@ export type Personagem = {
     atributo_cd: AtributoChar,
     atributos: Atributos,
     stats: {
-        pv_max: number,
         pv_atual: number,
         pv_temp: number,
-        pe_max: number,
         pe_atual: number,
         pe_temp: number,
         integridade_atual: number,
-        defesa: number,
-        deslocamento: number,
         rds: RD[],
     },
     bonus: {
-        atencao: Bonus[],
+        pv_max: Bonus[],
+        pe_max: Bonus[],
         defesa: Bonus[],
         deslocamento: Bonus[],
+        atencao: Bonus[],
         iniciativa: Bonus[],
         cd_especializacao: Bonus[],
+        cd_tecnica: Bonus[],
+        pericias: {pericia:string, bonus:Bonus}[],
+        atributos: {
+            força: Bonus[],
+            destreza: Bonus[],
+            constituição: Bonus[],
+            inteligência: Bonus[],
+            sabedoria: Bonus[],
+            presença: Bonus[],
+        }
     },
     tecnica: Tecnica|null,
     pericias: Pericias,
@@ -41,12 +49,12 @@ export type Personagem = {
 export type AtributoChar = "F"|"D"|"C"|"I"|"S"|"P"
 
 export type Atributos = {
-    forca: number,
+    força: number,
     destreza: number,
-    constituicao: number,
-    inteligencia: number,
+    constituição: number,
+    inteligência: number,
     sabedoria: number,
-    presenca: number,
+    presença: number,
 }
 
 export type RD = {
@@ -158,4 +166,22 @@ export const pericias_atributos = {
     "Sobrevivência": "S",
     "Tecnologia": "I",
     "Teologia": "I",
+}
+
+export const lista_atributos = {
+    "força": "Força",
+    "destreza": "Destreza",
+    "constituição": "Constituição",
+    "inteligência": "Inteligência",
+    "sabedoria": "Sabedoria",
+    "presença": "Presença",
+}
+
+export const atributos_letra_nome = {
+    "F": "força",
+    "D": "destreza",
+    "C": "constituição",
+    "I": "inteligência",
+    "S": "sabedoria",
+    "P": "presença",
 }

@@ -30,15 +30,15 @@ export function Abas({funcao, atual}:AbasProps) {
             texto: "Inventário",
             indice: 5,
         },
-        {
-            texto: "Descrição",
-            indice: 6,
-        },
+        // {
+        //     texto: "Descrição",
+        //     indice: 6,
+        // },
     ]
 
     return (
         <div className="bg-black p-px poligono2 w-[70%] h-20 mt-10">
-        <nav className="w-full h-full bg-white poligono2 flex justify-around items-center px-3">
+        <nav className="w-full h-full bg-white poligono2 flex justify-around items-center px-3 text-nowrap">
 
             {abas.map((aba)=>(
                 <button

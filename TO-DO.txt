@@ -1,8 +1,5 @@
 >Abas do Personagem:
-    -Testes & Perícias
+    -Testes & Perícias (Outros Testes)
     -Inventário
-    -Descrição
+    -Descrição (na Principal agr)
 >Filtro por cor na aba Feitiços
->Icones de (?) que mostram os cálculos, fontes de bônus etc.
->Valores calculados automaticamente (vida, PE, etc.)
-    -Adicionar bônus pra esses valores
