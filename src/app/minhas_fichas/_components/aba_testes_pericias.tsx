@@ -1,5 +1,6 @@
 import { perícias_atributos, resistencia_atributos, type Personagem } from "@/src/lib/FM/personagem";
 import { InfoPericia } from "./valores_calculados/info_pericia";
+import { InfoTesteResistencia } from "./valores_calculados/info_teste_resistencia";
 
 
 export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
@@ -56,8 +57,7 @@ export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
                         {/* Testes de Resistência 1 a 10 */}
                         <ul className="flex flex-col gap-0">
                             {Object.keys(resistencia_atributos).map((teste_resistencia, index)=>(
-                                <h1 key={index}>{teste_resistencia}</h1>
-                                // <InfoPericia key={index} nome={teste_resistencia} personagem={personagem}/>
+                                <InfoTesteResistencia key={index} nome={teste_resistencia} personagem={personagem}/>
                             ))}
                         </ul>
 
