@@ -7,6 +7,7 @@ import { InfoDefesa } from "./valores_calculados/info_defesa"
 import { InfoCDEspecialização } from "./valores_calculados/info_cd_especializacao"
 import { InfoDeslocamento } from "./valores_calculados/info_deslocamento"
 import { InfoAtenção } from "./valores_calculados/info_atencao"
+import { InfoIniciativa } from "./valores_calculados/info_iniciativa"
 
 export function AbaPrincipal({personagem}:{personagem:Personagem}) {
 
@@ -96,6 +97,7 @@ export function AbaPrincipal({personagem}:{personagem:Personagem}) {
                         <div className="flex flex-col items-end">
                             <InfoDefesa personagem={personagem}/>
                             <InfoCDEspecialização personagem={personagem}/>
+                            <InfoIniciativa personagem={personagem}/>
                         </div>
 
                         <div className="flex flex-col items-end">
