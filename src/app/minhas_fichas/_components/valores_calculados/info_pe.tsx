@@ -1,7 +1,7 @@
 import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
-import { modificador } from "@/src/lib/FM/funcoes_personagem";
+import { modificador_atributo } from "@/src/lib/FM/funcoes_personagem";
 
 type InfoPEProps = {
     personagem: Personagem
@@ -11,28 +11,25 @@ export function InfoPE({personagem}:InfoPEProps) {
 
     // Apelidos
     const inteligencia_base = personagem.atributos.inteligência
-    const bonus_inteligencia = personagem.bonus.atributos.inteligência
-    const nivel = personagem.nivel
+    const lista_bônus_inteligencia = personagem.bônus.atributos.inteligência
+    const nível = personagem.nível
 
-    //calcular modificador
-    let bonus_total = 0
-    bonus_inteligencia.forEach((bonus)=>{bonus_total += bonus.bonus})
-    const valor_total = inteligencia_base + bonus_total
-    const modificador_inteligencia = modificador(valor_total)
+    //calcular modificador de inteligência
+    const modificador_inteligencia = modificador_atributo(inteligencia_base, lista_bônus_inteligencia)
 
-    // calcular bonus pe total
-    let bonus_pe = 0
-    personagem.bonus.pe_max.forEach((bonus)=>{bonus_pe += bonus.bonus})
+    // calcular bônus pe total
+    let bônus_pe = 0
+    personagem.bônus.pe_max.forEach((bônus)=>{bônus_pe += bônus.valor})
 
     // gerar texto do informativo
-    let texto_info =    `${nivel} niveis, +6 por nível (Base Especialização)`
+    let texto_info =    `${nível} niveis, +6 por nível (Base Especialização)`
                         + `\n+ ${modificador_inteligencia} (mod. int.)`
-    personagem.bonus.pe_max.forEach((bonus)=>{texto_info += `\n+${bonus.bonus} (${bonus.fonte})`})
-    texto_info += `\n= (${nivel} x 6) + ${modificador_inteligencia}`
-    personagem.bonus.pe_max.forEach((bonus)=>{texto_info += ` + ${bonus.bonus}`})
+    personagem.bônus.pe_max.forEach((bônus)=>{texto_info += `\n+${bônus.valor} (${bônus.fonte})`})
+    texto_info += `\n= (${nível} x 6) + ${modificador_inteligencia}`
+    personagem.bônus.pe_max.forEach((bônus)=>{texto_info += ` + ${bônus.valor}`})
 
     // calcular pe max
-    const pe_max = (nivel )*6 + modificador_inteligencia + bonus_pe
+    const pe_max = (nível )*6 + modificador_inteligencia + bônus_pe
     texto_info += `\n= ${pe_max}`
     
     

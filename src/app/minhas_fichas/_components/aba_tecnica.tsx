@@ -1,11 +1,11 @@
-import { atributo_letra, cd_habilidade, nome_atributo_letra } from "@/src/lib/FM/funcoes_personagem"
-import { type Personagem } from "@/src/lib/FM/personagem"
+import { } from "@/src/lib/FM/funcoes_personagem"
+import { atributos_chave_nome, type Atributos, type Personagem } from "@/src/lib/FM/personagem"
 import { CardFeitico } from "./card_feitico"
 import { feiticos_futuros } from "@/src/lib/FM/angelo"
 
-export function AbaTecnica({personagem}:{personagem:Personagem}) {
+export function AbaTécnica({personagem}:{personagem:Personagem}) {
 
-    if (personagem.tecnica == null)
+    if (personagem.técnica == null)
         return (
             <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
                 <div className="bg-white poligono1 h-full">
@@ -35,7 +35,7 @@ export function AbaTecnica({personagem}:{personagem:Personagem}) {
                         </h1>
 
                         <p className="font-jujutsu whitespace-pre-wrap">
-                            {personagem.tecnica?.descricao}
+                            {personagem.técnica?.descrição}
                         </p>
 
                     </div>
@@ -47,14 +47,15 @@ export function AbaTecnica({personagem}:{personagem:Personagem}) {
                             <div>
                                 <h2>
                                     <b>CD da Técnica: </b>
-                                    {cd_habilidade(
-                                        atributo_letra(personagem.tecnica.atributo, personagem.atributos),
-                                        personagem.nivel,
-                                        personagem.tecnica.bonus_cd
-                                    )}
+                                        TO-DO
+                                    {/* {cd_habilidade(
+                                        atributo_letra(personagem.técnica.atributo, personagem.atributos),
+                                        personagem.nível,
+                                        personagem.bônus.cd_técnica
+                                    )} */}
                                 </h2>
 
-                                <h2><b>Atributo CD: </b> {nome_atributo_letra(personagem.tecnica?.atributo)}</h2>
+                                <h2><b>Atributo CD: </b> {atributos_chave_nome[personagem.técnica?.atributo as keyof Atributos]}</h2>
                             </div>
 
                         </div>
@@ -84,7 +85,7 @@ export function AbaTecnica({personagem}:{personagem:Personagem}) {
             </div>
 
              <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
-                {personagem.tecnica.feiticos.map((h, i)=>(
+                {personagem.técnica.feitiços.map((h, i)=>(
                     <CardFeitico
                         key={i}
                         hab={h}

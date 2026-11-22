@@ -1,7 +1,7 @@
 import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
-import { modificador } from "@/src/lib/FM/funcoes_personagem";
+import { modificador_atributo } from "@/src/lib/FM/funcoes_personagem";
 
 type InfoDefesaProps = {
     personagem: Personagem
@@ -11,26 +11,24 @@ export function InfoDefesa({personagem}:InfoDefesaProps) {
 
     // Apelidos
     const destreza_base = personagem.atributos.destreza
-    const bonus_destreza = personagem.bonus.atributos.destreza
-    const nivel = personagem.nivel
+    const lista_bônus_destreza = personagem.bônus.atributos.destreza
+    const nível = personagem.nível
+    const metade_nível = Math.trunc(nível/2)
 
-    //calcular modificador
-    let bonus_total = 0
-    bonus_destreza.forEach((bonus)=>{bonus_total += bonus.bonus})
-    const valor_total = destreza_base + bonus_total
-    const modificador_destreza = modificador(valor_total)
+    // Calcular modificador de destreza
+    const modificador_destreza = modificador_atributo(destreza_base, lista_bônus_destreza)
 
-    // calcular bonus defesa total
-    let bonus_defesa = 0
-    personagem.bonus.defesa.forEach((bonus)=>{bonus_defesa += bonus.bonus})
+    // calcular bônus defesa total
+    let bônus_defesa = 0
+    personagem.bônus.defesa.forEach((bônus)=>{bônus_defesa += bônus.valor})
 
     // gerar texto do informativo
     let texto_info =    `10\n+ ${modificador_destreza} (mod. destreza)`
-                        + `\n+ ${Math.trunc(nivel/2)} (Nível / 2)`
-    personagem.bonus.defesa.forEach((bonus)=>{texto_info += `\n+ ${bonus.bonus} (${bonus.fonte})`})
+                        + `\n+ ${metade_nível} (Nível / 2)`
+    personagem.bônus.defesa.forEach((bônus)=>{texto_info += `\n+ ${bônus.valor} (${bônus.fonte})`})
 
     // calcular defesa
-    const defesa = 10 + modificador_destreza + Math.trunc(nivel/2) + bonus_defesa
+    const defesa = 10 + modificador_destreza + metade_nível + bônus_defesa
     texto_info += `\n= ${defesa}`
     
     

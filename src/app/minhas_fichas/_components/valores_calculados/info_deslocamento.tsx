@@ -8,16 +8,16 @@ type InfoDeslocamentoProps = {
 
 export function InfoDeslocamento({personagem}:InfoDeslocamentoProps) {
 
-    // calcular bonus deslocamento total
-    let bonus_deslocamento = 0
-    personagem.bonus.deslocamento.forEach((bonus)=>{bonus_deslocamento += bonus.bonus})
+    // calcular bônus deslocamento total
+    let bônus_deslocamento = 0
+    personagem.bônus.deslocamento.forEach((bônus)=>{bônus_deslocamento += bônus.valor})
 
     // gerar texto do informativo
     let texto_info = "9m"
-    personagem.bonus.deslocamento.forEach((bonus)=>{texto_info += `\n+ ${bonus.bonus} (${bonus.fonte})`})
+    personagem.bônus.deslocamento.forEach((bônus)=>{texto_info += `\n+ ${bônus.valor} (${bônus.fonte})`})
 
     // calcular deslocamento
-    const deslocamento = 9 + bonus_deslocamento
+    const deslocamento = 9 + bônus_deslocamento
     texto_info += `\n= ${deslocamento}m`
     
     

@@ -3,9 +3,9 @@ import { CardHabilidade } from "./card_habilidade";
 
 export function AbaHabilidades({personagem}:{personagem:Personagem}) {
 
-    // lista de niveis de 1 ao nivel do personagem
-    // const niveis = Array.from(Array(personagem.nivel).keys()).map((n)=>(n+1))
-    const niveis = Array(personagem.nivel).fill(0)
+    // lista de niveis de 1 ao nível do personagem
+    // const niveis = Array.from(Array(personagem.nível).keys()).map((n)=>(n+1))
+    const niveis = Array(personagem.nível).fill(0)
 
     return (
         <section className="w-[70%] flex flex-col items-center">
@@ -19,35 +19,6 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
                             Habilidades
                         </h1>
                     </div>
-{/* 
-                    <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
-
-                        <h1 className="pl-5 font-jujutsu-titulo text-2xl">
-                            Alguma Coisa
-                        </h1>
-
-                        <p className="font-jujutsu indent-10">
-                            sla?
-                        </p>
-
-                    </div>
-
-                    <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
-                        <div className="text-left flex flex-col justify-between">
-                            
-                            <div>
-                                <h2>
-                                    <b>CD da Técnica: </b>
-                                </h2>
-
-                                <h2><b>Atributo CD: </b> aa</h2>
-                            </div>
-
-                        </div>
-
-                    </div> */}
-
-
 
                 </div>
             </div>
@@ -76,7 +47,7 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
                         <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
                             {
                                 personagem.habilidades
-                                .filter((hab)=>(hab.obtida_no_nivel == num+1))
+                                .filter((hab)=>(hab.obtida_no_nível == num+1))
                                 .map((habilidade, index)=>(
                                     <CardHabilidade key={index} habilidade={habilidade}/>
                                 ))

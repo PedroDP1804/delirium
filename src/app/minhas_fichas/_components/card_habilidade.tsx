@@ -27,7 +27,7 @@ export function CardHabilidade({habilidade}:CardHabilidadeProps) {
 
                         {/* Cor */}
                         <p className="whitespace-pre-wrap">
-                            {habilidade.descricao}
+                            {habilidade.descrição}
                         </p>
 
                     </div>

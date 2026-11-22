@@ -1,12 +1,12 @@
-import { bonus_treinamento } from "@/src/lib/FM/funcoes_personagem"
-import { lista_atributos, type Atributos, type Personagem } from "@/src/lib/FM/personagem"
+import { bônus_treinamento } from "@/src/lib/FM/funcoes_personagem"
+import { atributos_chave_nome, type Atributos, type Personagem } from "@/src/lib/FM/personagem"
 import { InfoAtributo } from "./valores_calculados/info_atributo"
 import { InfoPV } from "./valores_calculados/info_pv"
 import { InfoPE } from "./valores_calculados/info_pe"
 import { InfoDefesa } from "./valores_calculados/info_defesa"
-import { InfoCDEspecializacao } from "./valores_calculados/info_cd_especializacao"
+import { InfoCDEspecialização } from "./valores_calculados/info_cd_especializacao"
 import { InfoDeslocamento } from "./valores_calculados/info_deslocamento"
-import { InfoAtencao } from "./valores_calculados/info_atencao"
+import { InfoAtenção } from "./valores_calculados/info_atencao"
 
 export function AbaPrincipal({personagem}:{personagem:Personagem}) {
 
@@ -40,8 +40,8 @@ export function AbaPrincipal({personagem}:{personagem:Personagem}) {
                     </div>
 
                     <div className="text-lg text-right">
-                        <h2><b>Nível: </b>{personagem.nivel}</h2>
-                        <h2><b>Bônus de Treinamento: </b>+{bonus_treinamento(personagem.nivel)}</h2>
+                        <h2><b>Nível: </b>{personagem.nível}</h2>
+                        <h2><b>Bônus de Treinamento: </b>+{bônus_treinamento(personagem.nível)}</h2>
                         <h2><b>Grau: </b>{personagem.grau}º</h2>
                     </div>
 
@@ -56,24 +56,24 @@ export function AbaPrincipal({personagem}:{personagem:Personagem}) {
                         
                         {/* Físicos */}
                         <div className="flex flex-col items-end">
-                            {Object.keys(lista_atributos).slice(0, 3).map((atributo, index)=>(
+                            {Object.keys(atributos_chave_nome).slice(0, 3).map((atributo, index)=>(
                                 <InfoAtributo
                                     key={index}
-                                    nome={lista_atributos[atributo as keyof Atributos]}
+                                    nome={atributos_chave_nome[atributo as keyof Atributos]}
                                     base_atributo={personagem.atributos[atributo as keyof Atributos]}
-                                    bonus_atributo={personagem.bonus.atributos[atributo as keyof Atributos]}
+                                    lista_bônus_atributo={personagem.bônus.atributos[atributo as keyof Atributos]}
                                 />
                             ))}
                         </div>
 
                         {/* Mentais */}
                         <div className="flex flex-col items-end">
-                            {Object.keys(lista_atributos).slice(3, 6).map((atributo, index)=>(
+                            {Object.keys(atributos_chave_nome).slice(3, 6).map((atributo, index)=>(
                                 <InfoAtributo
                                     key={index}
-                                    nome={lista_atributos[atributo as keyof Atributos]}
+                                    nome={atributos_chave_nome[atributo as keyof Atributos]}
                                     base_atributo={personagem.atributos[atributo as keyof Atributos]}
-                                    bonus_atributo={personagem.bonus.atributos[atributo as keyof Atributos]}
+                                    lista_bônus_atributo={personagem.bônus.atributos[atributo as keyof Atributos]}
                                 />
                             ))}
                         </div>
@@ -95,12 +95,12 @@ export function AbaPrincipal({personagem}:{personagem:Personagem}) {
                     <div className="text-right flex flex-col justify-between">
                         <div className="flex flex-col items-end">
                             <InfoDefesa personagem={personagem}/>
-                            <InfoCDEspecializacao personagem={personagem}/>
+                            <InfoCDEspecialização personagem={personagem}/>
                         </div>
 
                         <div className="flex flex-col items-end">
                             <InfoDeslocamento personagem={personagem}/>
-                            <InfoAtencao personagem={personagem}/>
+                            <InfoAtenção personagem={personagem}/>
                         </div>
                     </div>
 

@@ -1,7 +1,7 @@
 import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
-import { modificador } from "@/src/lib/FM/funcoes_personagem";
+import { modificador_atributo } from "@/src/lib/FM/funcoes_personagem";
 
 type InfoPVProps = {
     personagem: Personagem
@@ -18,29 +18,26 @@ export function InfoPV({personagem}:InfoPVProps) {
     }
 
     // Apelidos
-    const constituicao_base = personagem.atributos.constituição
-    const bonus_constituicao = personagem.bonus.atributos.constituição
-    const nivel = personagem.nivel
+    const constituição_base = personagem.atributos.constituição
+    const lista_bônus_constituição = personagem.bônus.atributos.constituição
+    const nível = personagem.nível
 
-    //calcular modificador
-    let bonus_total = 0
-    bonus_constituicao.forEach((bonus)=>{bonus_total += bonus.bonus})
-    const valor_total = constituicao_base + bonus_total
-    const modificador_constituicao = modificador(valor_total)
+    //calcular modificador de constituição
+    const modificador_constituição = modificador_atributo(constituição_base, lista_bônus_constituição)
 
-    // calcular bonus pv total
-    let bonus_pv = 0
-    personagem.bonus.pv_max.forEach((bonus)=>{bonus_pv += bonus.bonus})
+    // calcular bônus pv total
+    let bônus_pv = 0
+    personagem.bônus.pv_max.forEach((bônus)=>{bônus_pv += bônus.valor})
 
     // gerar texto do informativo
-    let texto_info =    `Nivel 1:\t${10 + modificador_constituicao} (10 + mod. const.)`
-                        + `\n+${nivel-1} niveis, +${5 + modificador_constituicao} por nível (Base Especialização + mod. const.)`
-    personagem.bonus.pv_max.forEach((bonus)=>{texto_info += `\n+${bonus.bonus} (${bonus.fonte})`})
-    texto_info += `\n= ${10 + modificador_constituicao} + (${nivel-1} x ${5 + modificador_constituicao})`
-    personagem.bonus.pv_max.forEach((bonus)=>{texto_info += ` + ${bonus.bonus}`})
+    let texto_info =    `Nível 1:\t${10 + modificador_constituição} (10 + mod. const.)`
+                        + `\n+${nível-1} niveis, +${5 + modificador_constituição} por nível (Base Especialização + mod. const.)`
+    personagem.bônus.pv_max.forEach((bônus)=>{texto_info += `\n+${bônus.valor} (${bônus.fonte})`})
+    texto_info += `\n= ${10 + modificador_constituição} + (${nível-1} x ${5 + modificador_constituição})`
+    personagem.bônus.pv_max.forEach((bônus)=>{texto_info += ` + ${bônus.valor}`})
 
     // calcular pv max
-    const pv_max = (10 + modificador_constituicao) + (nivel - 1)*(5 + modificador_constituicao) + bonus_pv
+    const pv_max = (10 + modificador_constituição) + (nível - 1)*(5 + modificador_constituição) + bônus_pv
     texto_info += `\n= ${pv_max}`
     
     

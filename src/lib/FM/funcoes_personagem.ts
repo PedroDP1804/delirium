@@ -1,6 +1,7 @@
-import type { Atributos } from "./personagem";
+import type { Bônus, Treinamento } from "./personagem";
 
-export function bonus_treinamento(nivel:number):number {
+// Calcula o bônus de treinamento com base no nível
+export function bônus_treinamento(nivel:number):number {
     if (nivel < 5) return 2;
     if (nivel < 9) return 3;
     if (nivel < 13) return 4;
@@ -8,62 +9,23 @@ export function bonus_treinamento(nivel:number):number {
     return 6
 }
 
-export function modificador(atributo:number):number {
-    return Math.trunc(atributo/2) - 5
+// Calcula o modificador de um atributo
+export function modificador_atributo(base_atributo:number, lista_bônus:Bônus[]):number {
+    let total_atributo = base_atributo
+    lista_bônus.forEach((bônus)=>{total_atributo += bônus.valor})
+    return Math.trunc(total_atributo/2) - 5
 }
 
-export function atributo_letra(letra:string, atributos:Atributos) {
-    switch (letra) {
-        case "F":
-            return atributos.forca
-        case "D":
-            return atributos.destreza
-        case "C":
-            return atributos.constituicao
-        case "I":
-            return atributos.inteligencia
-        case "S":
-            return atributos.sabedoria
-        case "P":
-            return atributos.presenca
-        default:
+// Calcula o multiplicador do bônus de uma perícia/TR com base no treinamento
+export function multiplicador_treinamento(treinamento:Treinamento):number {
+    switch (treinamento) {
+        case "Destreinado":
             return 0
+        case "Treinado":
+            return 1
+        case "Mestre":
+            return 1.5
     }
 }
 
-export function nome_atributo_letra(letra:string) {
-    switch (letra) {
-        case "F":
-            return "Força"
-        case "D":
-            return "Destreza"
-        case "C":
-            return "Constituição"
-        case "I":
-            return "Inteligência"
-        case "S":
-            return "Sabedoria"
-        case "P":
-            return "Presença"
-        default:
-            return undefined
-    }
-}
-
-export function atencao(percepcao: number, outros:{fonte:string, bonus:number}[]) {
-    let bonus = 0
-    outros.forEach((o)=>{bonus += o.bonus})
-    return 10 + percepcao + bonus
-}
-
-export function defesa(destreza: number, nivel:number, outros:{fonte:string, bonus:number}[]) {
-    let bonus = 0
-    outros.forEach((o)=>{bonus += o.bonus})
-    return 10 + modificador(destreza) + Math.trunc(nivel/2) + bonus
-}
-
-export function cd_habilidade(atributo: number, nivel:number, outros:{fonte:string, bonus:number}[]) {
-    let bonus = 0
-    outros.forEach((o)=>{bonus += o.bonus})
-    return 10 + modificador(atributo) + Math.trunc(nivel/2) + bonus_treinamento(nivel) + bonus
-}
+// Calcula o bônus

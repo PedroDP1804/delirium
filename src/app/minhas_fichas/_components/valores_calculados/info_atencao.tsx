@@ -1,61 +1,42 @@
 import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
-import { bonus_treinamento, modificador } from "@/src/lib/FM/funcoes_personagem";
+import { bônus_treinamento, modificador_atributo, multiplicador_treinamento } from "@/src/lib/FM/funcoes_personagem";
 
-type InfoAtencaoProps = {
+type InfoAtençãoProps = {
     personagem: Personagem
 }
 
-export function InfoAtencao({personagem}:InfoAtencaoProps) {
+export function InfoAtenção({personagem}:InfoAtençãoProps) {
 
-    // >>>> Calcular bonus total na pericia Percepção
-    let total_bonus_percepcao = 0
-
-    // calcular mod. sabedoria
-    let total_sabedoria = personagem.atributos.sabedoria
-    personagem.bonus.atributos.sabedoria.forEach((bonus)=>{total_sabedoria += bonus.bonus})
-    const modificador_sabedoria = modificador(total_sabedoria)
-    total_bonus_percepcao += modificador_sabedoria + Math.trunc(personagem.nivel/2)
+    // Calcular bônus total na pericia Percepção
+    let total_bônus_percepção = modificador_atributo(personagem.atributos.sabedoria, personagem.bônus.atributos.sabedoria)
+    total_bônus_percepção += Math.trunc(personagem.nível/2)
 
     // somar bônus de treinamento se treinado
-    let multiplicador_treinamento = 0
-    switch (personagem.pericias.percepção) {
-        case "D":
-            multiplicador_treinamento = 0
-            break
-        case "T":
-            multiplicador_treinamento = 1
-            break
-        case "M":
-            multiplicador_treinamento = 1.5
-            break
-    }
-    total_bonus_percepcao += bonus_treinamento(personagem.nivel) * multiplicador_treinamento
+    const multiplicador_bonus_treinamento = multiplicador_treinamento(personagem.perícias.percepção)
+    total_bônus_percepção += Math.trunc(bônus_treinamento(personagem.nível) * multiplicador_bonus_treinamento)
 
-    // somar os bonus extra em percepção
-    const lista_bonus_percepcao = personagem.bonus.pericias.filter((bonus_pericia)=>(bonus_pericia.pericia == "percepção"))
-    lista_bonus_percepcao.forEach((bonus)=>{total_bonus_percepcao += bonus.bonus.bonus})
+    // somar os bônus extra em percepção
+    const lista_bônus_percepção = personagem.bônus.perícias.filter((bônus_perícia)=>(bônus_perícia.perícia == "percepção"))
+    lista_bônus_percepção.forEach((bônus)=>{total_bônus_percepção += bônus.bônus.valor})
 
-
-
-    // calcular bonus atencao total
-    let bonus_atencao = 0
-    personagem.bonus.atencao.forEach((bonus)=>{bonus_atencao += bonus.bonus})
+    // somar os bônus extra em atenção
+    let bônus_atenção = 0
+    personagem.bônus.atenção.forEach((bônus)=>{bônus_atenção += bônus.valor})
 
     // gerar texto do informativo
-    let texto_info = `10\n+ ${total_bonus_percepcao} (Bônus Percepção)`
-    personagem.bonus.atencao.forEach((bonus)=>{texto_info += `\n+ ${bonus.bonus} (${bonus.fonte})`})
+    let texto_info = `10\n+ ${total_bônus_percepção} (Bônus Percepção)`
+    personagem.bônus.atenção.forEach((bônus)=>{texto_info += `\n+ ${bônus.valor} (${bônus.fonte})`})
 
-    // calcular atencao
-    const atencao = 10 + total_bonus_percepcao + bonus_atencao
-    texto_info += `\n= ${atencao}`
-    
+    // calcular atenção
+    const atenção = 10 + total_bônus_percepção + bônus_atenção
+    texto_info += `\n= ${atenção}`
     
     return (
             <h2 className="text-lg flex gap-1 items-center">
                 <b>Atenção: </b>
-                {atencao}
+                {atenção}
                 <Informativo texto={texto_info} icone={<ScanSearch color="#777777"/>}/>
             </h2>
     )

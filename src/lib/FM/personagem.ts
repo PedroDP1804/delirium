@@ -2,9 +2,9 @@ export type Personagem = {
     nome:string,
     origem: string,
     especializacao: string,
-    nivel: number,
+    nível: number,
     grau: number,
-    atributo_cd: AtributoChar,
+    atributo_cd: ChaveAtributo,
     atributos: Atributos,
     stats: {
         pv_atual: number,
@@ -14,39 +14,40 @@ export type Personagem = {
         integridade_atual: number,
         rds: RD[],
     },
-    bonus: {
-        pv_max: Bonus[],
-        pe_max: Bonus[],
-        defesa: Bonus[],
-        deslocamento: Bonus[],
-        atencao: Bonus[],
-        iniciativa: Bonus[],
-        cd_especializacao: Bonus[],
-        cd_tecnica: Bonus[],
-        pericias: {pericia:string, bonus:Bonus}[],
+    bônus: {
+        pv_max: Bônus[],
+        pe_max: Bônus[],
+        defesa: Bônus[],
+        deslocamento: Bônus[],
+        atenção: Bônus[],
+        iniciativa: Bônus[],
+        cd_especialização: Bônus[],
+        cd_técnica: Bônus[],
+        perícias: {perícia:string, bônus:Bônus}[],
         atributos: {
-            força: Bonus[],
-            destreza: Bonus[],
-            constituição: Bonus[],
-            inteligência: Bonus[],
-            sabedoria: Bonus[],
-            presença: Bonus[],
+            força: Bônus[],
+            destreza: Bônus[],
+            constituição: Bônus[],
+            inteligência: Bônus[],
+            sabedoria: Bônus[],
+            presença: Bônus[],
         }
     },
-    tecnica: Tecnica|null,
-    pericias: Pericias,
+    técnica: Técnica|null,
+    perícias: Perícias,
+    testes_resistência: TestesResistência,
     habilidades: Habilidade[],
-    aptidao: {
+    aptidão: {
         aura: number,
         controle_leitura: number,
         barreira: number,
-        dominio: number,
+        domínio: number,
         energia_reversa: number,
-        aptidoes: Habilidade[]
+        aptidões: Habilidade[]
     }
 }
 
-export type AtributoChar = "F"|"D"|"C"|"I"|"S"|"P"
+export type ChaveAtributo = "força" | "destreza" | "constituição" | "inteligência" | "sabedoria" | "presença"
 
 export type Atributos = {
     força: number,
@@ -63,66 +64,57 @@ export type RD = {
     fonte: string,
 }
 
-export type Bonus = {
+export type Bônus = {
+    valor: number,
     fonte: string,
-    bonus: number,
 }
 
-export type Tecnica = {
+export type Técnica = {
     nome: string,
-    descricao: string,
-    atributo: AtributoChar,
-    bonus_cd: Bonus[],
-    feiticos: Feitiço[],
-    expansao: Expansao|null,
-    maxima: Maxima|null,
+    descrição: string,
+    atributo: ChaveAtributo,
+    feitiços: Feitiço[],
+    expansão: Especial|null,
+    máxima: Especial|null,
 }
 
 export type Feitiço = {
     nome: string,
-    nivel: number,
+    nível: number,
     custo: number,
-    caracteristicas: Caracteristicas,
-    descricao: {
-        mecanica: string,
+    caracteristicas: {
+        cor: string,
+        conjuração?: string,
+        alcance?: string,
+        alvo?: string,
+        duração?: string,
+        requisitos: string[],
+    },
+    descrição: {
+        mecânica: string,
         narrativa: string,
     },
-    observacoes: string[],
+    observações: string[],
 }
 
 export type Habilidade = {
     nome: string,
     tipo: string,
-    descricao:string,
-    obtida_no_nivel: number,
+    descrição:string,
+    obtida_no_nível: number,
 }
 
-export type Caracteristicas = {
-  cor: string,
-  conjuracao?: string,
-  alcance?: string,
-  alvo?: string,
-  duracao?: string,
-  requisitos: string[],
-}
-
-export type Expansao = {
+// Máxima / Expansão
+export type Especial = {
     nome: string,
     tipo: string,
-    descricao_mecanica: string,
-    descricao_narrativa: string,
+    descrição_mecânica: string,
+    descrição_narrativa: string,
 }
 
-export type Maxima = {
-    nome: string,
-    tipo: string,
-    descricao_mecanica: string,
-    descricao_narrativa: string,
-}
+export type Treinamento = "Destreinado"|"Treinado"|"Mestre"
 
-export type Treinamento = "D"|"T"|"M"
-
-export type Pericias = {
+export type Perícias = {
     acrobacia: Treinamento,
     atletismo: Treinamento,
     direção: Treinamento,
@@ -145,43 +137,50 @@ export type Pericias = {
     teologia: Treinamento,
 }
 
-export const pericias_atributos = {
-    "Acrobacia": "D",
-    "Atletismo": "F",
-    "Direção": "S",
-    "Enganação": "P",
-    "Feitiçaria": "I",
-    "Furtividade": "D",
-    "História": "I",
-    "Intimidação": "P",
-    "Intuição": "S",
-    "Investigação": "I",
-    "Medicina": "S",
-    "Ocultismo": "S",
-    "Ofício": "I",
-    "Percepção": "S",
-    "Performance": "P",
-    "Persuasão": "P",
-    "Prestidigitação": "D",
-    "Sobrevivência": "S",
-    "Tecnologia": "I",
-    "Teologia": "I",
+export type TestesResistência = {
+    astúcia: Treinamento,
+    fortitude: Treinamento,
+    integridade: Treinamento,
+    reflexos: Treinamento,
+    vontade: Treinamento,
 }
 
-export const lista_atributos = {
+export const resistencia_atributos = {
+    astúcia: "inteligência",
+    fortitude: "constituição",
+    integridade: "constituição",
+    reflexos: "destreza",
+    vontade: "sabedoria",
+}
+
+export const perícias_atributos = {
+    "acrobacia": "destreza",
+    "atletismo": "força",
+    "direção": "sabedoria",
+    "enganação": "presença",
+    "feitiçaria": "inteligência",
+    "furtividade": "destreza",
+    "história": "inteligência",
+    "intimidação": "presença",
+    "intuição": "sabedoria",
+    "investigação": "inteligência",
+    "medicina": "sabedoria",
+    "ocultismo": "sabedoria",
+    "ofício": "inteligência",
+    "percepção": "sabedoria",
+    "performance": "presença",
+    "persuasão": "presença",
+    "prestidigitação": "destreza",
+    "sobrevivência": "sabedoria",
+    "tecnologia": "inteligência",
+    "teologia": "inteligência",
+}
+
+export const atributos_chave_nome = {
     "força": "Força",
     "destreza": "Destreza",
     "constituição": "Constituição",
     "inteligência": "Inteligência",
     "sabedoria": "Sabedoria",
     "presença": "Presença",
-}
-
-export const atributos_letra_nome = {
-    "F": "força",
-    "D": "destreza",
-    "C": "constituição",
-    "I": "inteligência",
-    "S": "sabedoria",
-    "P": "presença",
 }

@@ -1,8 +1,8 @@
-import { pericias_atributos, type Pericias, type Personagem } from "@/src/lib/FM/personagem";
+import { perícias_atributos, resistencia_atributos, type Personagem } from "@/src/lib/FM/personagem";
 import { InfoPericia } from "./valores_calculados/info_pericia";
 
 
-export function AbaTestesEPericias({personagem}:{personagem:Personagem}) {
+export function AbaTestesEPerícias({personagem}:{personagem:Personagem}) {
 
     return (
         <section className="w-[70%] flex flex-col items-center">
@@ -28,17 +28,39 @@ export function AbaTestesEPericias({personagem}:{personagem:Personagem}) {
 
                         {/* Perícias 1 a 10 */}
                         <ul className="flex flex-col gap-0">
-                            {Object.keys(pericias_atributos).slice(0, 10).map((pericia, index)=>(
+                            {Object.keys(perícias_atributos).slice(0, 10).map((pericia, index)=>(
                                 <InfoPericia key={index} nome={pericia} personagem={personagem}/>
                             ))}
                         </ul>
 
                         {/* Perícias 11 a 20 */}
                         <ul className="flex flex-col gap-0">
-                            {Object.keys(pericias_atributos).slice(10, undefined).map((pericia, index)=>(
+                            {Object.keys(perícias_atributos).slice(10, undefined).map((pericia, index)=>(
                                 <InfoPericia key={index} nome={pericia} personagem={personagem}/>
                             ))}
                         </ul>
+
+                    </div>
+
+                </div>
+
+                {/* Testes de Resistência */}
+                <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
+
+                    <h1 className="pl-3 font-jujutsu-titulo text-3xl">
+                        Testes de Resistência
+                    </h1>
+
+                    <div className="mt-2 pl-5">
+
+                        {/* Testes de Resistência 1 a 10 */}
+                        <ul className="flex flex-col gap-0">
+                            {Object.keys(resistencia_atributos).map((teste_resistencia, index)=>(
+                                <h1 key={index}>{teste_resistencia}</h1>
+                                // <InfoPericia key={index} nome={teste_resistencia} personagem={personagem}/>
+                            ))}
+                        </ul>
+
 
                     </div>
 

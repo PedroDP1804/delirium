@@ -18,7 +18,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                 {/* Nome da Hab */}
                 <CollapsibleTrigger className="w-full">
                     <h1 className={`text-left indent-6 h-full pt-7 pb-6 text-shadow-sm text-shadow-black text-white ${estilo_de_cor.bg_nome} border-b border-black cursor-pointer font-bold text-xl`}>
-                        {hab.nome} | Feitiço Nível {hab.nivel} | {hab.custo} PE
+                        {hab.nome} | Feitiço Nível {hab.nível} | {hab.custo} PE
                     </h1>
                 </CollapsibleTrigger>
 
@@ -31,7 +31,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                         <p className="font-bold">{'>'} Cor:  <span className={estilo_de_cor.texto_cor}>{hab.caracteristicas.cor}</span></p>
 
                         {/* Conjuração */}
-                        {hab.caracteristicas.conjuracao && <p><b>{'>'} Conjuração:</b>  {hab.caracteristicas.conjuracao}</p>}
+                        {hab.caracteristicas.conjuração && <p><b>{'>'} Conjuração:</b>  {hab.caracteristicas.conjuração}</p>}
 
                         {/* Alcance */}
                         {hab.caracteristicas.alcance && <p><b>{'>'} Alcance:</b>  {hab.caracteristicas.alcance}</p>}
@@ -40,7 +40,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                         {hab.caracteristicas.alvo && (<p><b>{'>'} Alvo:</b>  {hab.caracteristicas.alvo}</p>)} 
 
                         {/* Duração */}
-                        {hab.caracteristicas.duracao && (<p><b>{'>'} Duração:</b>  {hab.caracteristicas.duracao}</p>)} 
+                        {hab.caracteristicas.duração && (<p><b>{'>'} Duração:</b>  {hab.caracteristicas.duração}</p>)} 
 
                         {/* Requisitos */}
                         {hab.caracteristicas.requisitos.map((r, i)=>(
@@ -62,11 +62,11 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                             <div className={`h-full p-3 bg-white pb-5 flex flex-col gap-4`}>
 
                                 <p className="whitespace-pre-wrap">
-                                    {hab.descricao.mecanica}
+                                    {hab.descrição.mecânica}
                                 </p>
 
                                 <p className="whitespace-pre-wrap italic">
-                                    {hab.descricao.narrativa}
+                                    {hab.descrição.narrativa}
                                 </p>
 
                             </div>
@@ -86,9 +86,9 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                         <CollapsibleContent>
                             <div className={`h-full px-3 py-5 bg-white flex flex-col gap-2`}>
 
-                                {hab.observacoes.length > 0 ?
+                                {hab.observações.length > 0 ?
                                     (
-                                        hab.observacoes.map((o, i)=>(
+                                        hab.observações.map((o, i)=>(
                                             <p key={i} className="indent-5 whitespace-pre-wrap">
                                                 •    {o}
                                             </p>

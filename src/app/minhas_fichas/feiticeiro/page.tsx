@@ -3,10 +3,10 @@ import { AbaPrincipal } from "../_components/aba_principal";
 import { Abas } from "../_components/abas";
 import { useState } from "react";
 import { angelo } from "@/src/lib/FM/angelo";
-import { AbaTecnica } from "../_components/aba_tecnica";
+import { AbaTécnica } from "../_components/aba_tecnica";
 import { AbaHabilidades } from "../_components/aba_habilidades";
 import { AbaAptidões } from "../_components/aba_aptidoes";
-import { AbaTestesEPericias } from "../_components/aba_testes_pericias";
+import { AbaTestesEPerícias } from "../_components/aba_testes_pericias";
 
 export default function Home() {
 
@@ -27,13 +27,13 @@ export default function Home() {
           case 0:
             return <AbaPrincipal personagem={angelo}/>
           case 1:
-            return <AbaTecnica personagem={angelo}/>
+            return <AbaTécnica personagem={angelo}/>
           case 2:
             return <AbaHabilidades personagem={angelo}/>
           case 3:
             return <AbaAptidões personagem={angelo}/>
           case 4:
-            return <AbaTestesEPericias personagem={angelo}/>
+            return <AbaTestesEPerícias personagem={angelo}/>
           default:
             return null
         }
