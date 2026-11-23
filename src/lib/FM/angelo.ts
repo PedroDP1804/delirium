@@ -6,6 +6,7 @@ const feiticos_angelo:Feitiço[] = [
         nome: "Paleta de Cores",
         nível: 0,
         custo: 0,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Sem Cor",
             conjuração: "Ação Livre / Ação Bônus",
@@ -20,7 +21,9 @@ const feiticos_angelo:Feitiço[] = [
                         + "\n\t\t\t\t-Azul: Objetos se aproximando do observador sofrem desvio pro azul, por causa do efeito Doppler. Para quaisquer efeitos seus, o alvo conta como se estivesse a 3 metros a menos do que realmente está."
                         + "\n\t\t\t\t-Verde: Verde está associado, entre outros, a sustentabilidade e saúde. Você recicla os resquícios de energia amaldiçoada desperdiçada pela sua técnica em uma camada protetora. A cada 3 PE gastos enquanto sob esse efeito, você ganha 2 PV temporários, até um máximo de 2x o seu nível."
                         + "\n\t\t\t\t-Amarelo: Amarelo está associado a chamar a atenção ou induzir a ficar atento. Você aprimora a capacidade de atenção da sua mente, recebendo +1 em Percepção e em Testes de Resistência de Astúcia."
-                        + "\n\t\t\t\t-Violeta: É a maior frequência no espectro da luz visível, e também a que carrega mais energia. Você sobrecarrega seus Feitiços e Aptidões com energia púrpura, causando +4 de dano em Feitiços e Aptidões de dano."
+                        + "\n\t\t\t\t-Laranja: Laranja é a cor do fogo. Você irradia chamas ao seu redor, incendeando inimigos a até 3m de você. Inimigos incendeados recebem 1d4 de dano Queimante a cada turno, até que passem em um TR de Fortitude."
+                        + "\n\t\t\t\t-Roxo: É a maior frequência no espectro da luz visível, e também a que carrega mais energia. Você sobrecarrega seus Feitiços e Aptidões com energia púrpura, causando +4 de dano em Feitiços e Aptidões de dano."
+                        + "\n\t\t\t\t-Rosa: ?"
                         + "\n\t\t\t\t-Marrom: Essa cor é associada a diversos elementos de terreno: solo, lama, buracos, troncos e raízes, etc. Você se adapta a esses elementos, ignorando terreno difícil."
                         + "\n\t\t\t\t-Branco: Uma cor especial, a mistura de todas as cores-luz - ou especificamente das cores Vermelho, Verde e Azul, no modelo RGB. Se estiver com essas três cores infundidas, você pode gastar uma Ação Bônus para misturá-las, formando e infundindo a cor Branco. Você se sobrecarrega com todas as cores, uma amálgama de possibilidades, recebendo todos os benefícios das outras cores, mas fica Desorientado e Desprevinido até dissipar o efeito. Alternativamente, você pode infundir a cor branca diretamente (como Toque e Ação Bônus), mas não receber esses efeitos, nem negativos nem positivos; alguns Feitiços Brancos não podem ser conjurados com esse método."
                         + "\n\n\t\t\tUma mesma cor de um mesmo objeto só pode ser extraída uma vez por cena. Você pode ter até 3 cores infundidas simultaneamente, mas você gasta 1 PE por rodada se tiver duas e 3 PE por rodada se tiver três. Bônus de mesma cor não acumulam. Todas as cores infundidas são perdidas no fim da cena. Você pode descartar uma cor a qualquer momento como ação livre.",
@@ -35,6 +38,7 @@ const feiticos_angelo:Feitiço[] = [
         nome: "Pincelar",
         nível: 1,
         custo: 1,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Branco",
             conjuração: "Ação Comum (ou Ação Bônus / Reação)",
@@ -78,6 +82,7 @@ const feiticos_angelo:Feitiço[] = [
         nome: "Radiação de Corpo Negro",
         nível: 1,
         custo: 2,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Vermelho",
             conjuração: "Ação Comum",
@@ -95,6 +100,7 @@ const feiticos_angelo:Feitiço[] = [
         nome: "Dupla Imagem",
         nível: 1,
         custo: 2,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Verde",
             conjuração: "Reação + Ação Bônus + Ação Comum",
@@ -112,6 +118,7 @@ const feiticos_angelo:Feitiço[] = [
         nome: "Brilho Acalentador",
         nível: 1,
         custo: 2,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Amarelo",
             conjuração: "Ação Comum",
@@ -130,6 +137,7 @@ const feiticos_angelo:Feitiço[] = [
     //     nome: "Nome",
     //     nível: 1,
     //     custo: 2,
+    //     tipo: "Ativo",
     //     caracteristicas: {
     //         cor: "Cor",
     //         conjuração: "Ação Comum",
@@ -177,7 +185,7 @@ export const angelo:Personagem = {
         atenção: [],
         iniciativa: [],
         cd_especialização: [],
-        cd_técnica: [],
+        cd_técnica: [{valor:1, fonte:"Chaveiro Canalizador"}],
         perícias: [],
         testes_resistência: [],
         atributos: {
@@ -193,8 +201,8 @@ export const angelo:Personagem = {
         nome: "Aquarela",
         descrição: "\t\t\tA técnica permite conjurar fenômenos, manifestar características e aplicar efeitos associados diretamente a cores específicas, seja por aspectos do universo ou pela concepção humana."
                     + "\n\t\t\tComo parte da técnica, você recebe também os seguintes itens:"
-                    + "\n\t\t\t\t• Um tablete retangular com vários círculos coloridos, feitos de acrílico, similar a uma paleta de cores. Ocupa meio espaço."
-                    + "\n\t\t\t\t• Um Pincel Amaldiçoado, imbuído com sua Técnica, usado para conjurar Pincelar. Ocupa meio espaço"
+                    + "\n\t\t\t\t• Um tablete com vários círculos coloridos, feitos de acrílico, similar a uma paleta de cores. Ocupa 1 espaço."
+                    + "\n\t\t\t\t• Um Pincel Amaldiçoado, imbuído com sua Técnica, usado para conjurar alguns Feitiços. Ocupa 1 espaço"
                     ,
         atributo: "sabedoria",
         feitiços: feiticos_angelo,
@@ -318,24 +326,68 @@ export const angelo:Personagem = {
         //     obtida_no_nível: 2
         // },
     ],
-    aptidão: {
+    níveis_aptidão: {
         aura: 0,
         controle_leitura: 0,
         barreira: 1,
         domínio: 0,
         energia_reversa: 0,
-        aptidões: [
-            {
-                nome: "Técnicas de Barreira",
-                tipo: "Barreira",
-                descrição:  "\t\t\tVocê se torna capaz de erguer e manipular barreiras, as quais podem ser usadas para defender o usuário ou prender oponentes. Você pode criar, como uma Ação Comum, até 6 paredes ao seu redor, com cada parede custando 1 ponto de energia amaldiçoada."
-                            + "\n\t\t\tCada parede erguida tem 1,5 metros de tamanho, e vida igual a 5 + seu nível de aptidão em Barreiras multiplicado por metade do seu nível de personagem."
-                            + "\n\t\t\tPodem servir tanto como obstáculo como uma maneira de prender seus inimigos. Você pode as manipular e mover usando outra ação comum."
-                            + "\n[Pré-Requisito: Nível de Aptidão em Barreira 1]",
-                obtida_no_nível: 2
-            }
-        ]
-    }
+    },
+    aptidões: [
+        {
+            nome: "Técnicas de Barreira",
+            tipo: "Barreira",
+            descrição:  "\t\t\tVocê se torna capaz de erguer e manipular barreiras, as quais podem ser usadas para defender o usuário ou prender oponentes. Você pode criar, como uma Ação Comum, até 6 paredes ao seu redor, com cada parede custando 1 ponto de energia amaldiçoada."
+                        + "\n\t\t\tCada parede erguida tem 1,5 metros de tamanho, e vida igual a 5 + seu nível de aptidão em Barreiras multiplicado por metade do seu nível de personagem."
+                        + "\n\t\t\tPodem servir tanto como obstáculo como uma maneira de prender seus inimigos. Você pode as manipular e mover usando outra ação comum."
+                        + "\n[Pré-Requisito: Nível de Aptidão em Barreira 1]",
+            obtida_no_nível: 2
+        }
+    ],
+    inventário: [
+        {
+            nome: "Pincel Amaldiçoado",
+            descrição: "Um pincel [inserir descrição foda], imbuído com a técnica Aquarela, usado para conjurar alguns Feitiços.",
+            espaços: 1,
+            custo: 0,
+        },
+        {
+            nome: "Tablete de Cores",
+            descrição: "Um tablete retangular com vários círculos coloridos, feitos de acrílico, similar a uma paleta de cores.",
+            espaços: 1,
+            custo: 0,
+        },
+        {
+            nome: "Leque",
+            descrição: "Leque",
+            espaços: 1,
+            custo: 1,
+        },
+        {
+            nome: "Uniforme Comum",
+            descrição: "Uniforme comum.",
+            espaços: 1,
+            custo: 0,
+        },
+        {
+            nome: "Kit de Ferramentas de []",
+            descrição: "Kit de Ferramentas de [].",
+            espaços: 1,
+            custo: 0,
+        },
+        {
+            nome: "Kit de Ferramentas de []",
+            descrição: "Kit de Ferramentas de [].",
+            espaços: 1,
+            custo: 0,
+        },
+        {
+            nome: "Chaveiro Canalizador",
+            descrição: "Um chaveiro que canaliza energia amaldiçoada, refinando-a e dificultando resistir. Um personagem com o chaveiro canalizador tem a sua CD Amaldiçoada aumentada em 1.",
+            espaços: 1,
+            custo: 1,
+        },
+    ]
 }
 
 
@@ -345,6 +397,7 @@ export const feiticos_futuros:Feitiço[] = [
         nome: "Dispersão Celeste",
         nível: 1,
         custo: 2,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Azul",
             conjuração: "Ação Comum",
@@ -362,6 +415,7 @@ export const feiticos_futuros:Feitiço[] = [
         nome: "Hora Dourada",
         nível: 1,
         custo: 2,
+        tipo: "Ativo",
         caracteristicas: {
             cor: "Amarelo",
             conjuração: "Ação Bônus",
@@ -378,11 +432,32 @@ export const feiticos_futuros:Feitiço[] = [
             "Nem tem dado sla, foi por vibes"
         ]
     },
+    {
+        nome: "Renascer das Cinzas",
+        nível: 2,
+        custo: 4,
+        tipo: "Passivo",
+        caracteristicas: {
+            cor: "Laranja",
+            requisitos: []
+        },
+        descrição: {
+            mecânica: "\t\t\tNa primeira vez que morrer (morrer, não chegar a 0 de vida), seu corpo entra em combustão e é destruído, causando 9d12 de dano Queimante em inimigos adjacentes, ou metade disso em um sucesso num TR de Reflexos. Ao fim da cena, você renasce das cinzas como uma fênix, voltando a como estava antes de cair a 0 de vida, porém com 1 de vida e 0 de PE."
+            + "\n\t\t\tApós isso, você perde permanentemente este Feitiço e a capacidade de ver (se torna cinza) e infundir a cor Laranja, e por consequência de usá-la em sua Técnica e de usar quaisquer Feitiços Laranjas. Além disso, quando renascer, você se torna permanentemente vulnerável a dano Queimante. Você contiunua permanentemente com a redução de PE máximos deste Feitiço.",
+            narrativa: "\t\t\tA fênix é um pássaro da mitologia grega que, quando morria, entrava em auto-combustão e, passado algum tempo, ressurgia das próprias cinzas."
+        },
+        observações: [
+            "Esse Feitiço é um Voto Próprio Extremo",
+            "(5d / 9m / 24m) (-24m / -6m = +4d)",
+            "Considerei o dano e a ressurreição separados pq o Voto já 'cobre' a ressurreição",
+        ]
+    },
 
     // {
     //     nome: "Nome",
     //     nível: 1,
     //     custo: 2,
+    //     tipo: "Ativo",
     //     caracteristicas: {
     //         cor: "Cor",
     //         conjuração: "Ação Comum",

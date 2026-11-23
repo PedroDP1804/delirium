@@ -35,7 +35,14 @@ export function estilo_cor(cor:string):EstiloCor {
                 bg_secoes: "bg-[url(/bg-amarelo.png)]",
             }
 
-        // ... Violeta, Rosa, Marrom, Laranja
+        case "Laranja":
+            return {
+                texto_cor: "text-[#ff8800] text-shadow-lg/20",
+                bg_nome: "bg-[url(/bg-laranja.png)]",
+                bg_secoes: "bg-[url(/bg-laranja.png)]",
+            }
+
+        // ... Roxo, Rosa, Marrom, Laranja
 
         case "Branco":
             return {

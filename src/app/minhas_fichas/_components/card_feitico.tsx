@@ -18,7 +18,7 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                 {/* Nome da Hab */}
                 <CollapsibleTrigger className="w-full">
                     <h1 className={`text-left indent-6 h-full pt-7 pb-6 text-shadow-sm text-shadow-black text-white ${estilo_de_cor.bg_nome} border-b border-black cursor-pointer font-bold text-xl`}>
-                        {hab.nome} | Feitiço Nível {hab.nível} | {hab.custo} PE
+                        {hab.nome} | Feitiço {hab.tipo == "Passivo" && "Passivo "}Nível {hab.nível} | {hab.tipo == "Ativo" ? `${hab.custo} PE` : `-${hab.custo} PE max`}
                     </h1>
                 </CollapsibleTrigger>
 

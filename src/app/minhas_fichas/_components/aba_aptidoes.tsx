@@ -25,11 +25,11 @@ export function AbaAptidões({personagem}:{personagem:Personagem}) {
 
                         <ul className="flex flex-col gap-1 mt-2 pl-5">
 
-                            <h2 className="text-lg"><b>Aptidão em Aura (AU): </b>{personagem.aptidão.aura}</h2>
-                            <h2 className="text-lg"><b>Aptidão em Controle e Leitura (CL): </b>{personagem.aptidão.controle_leitura}</h2>
-                            <h2 className="text-lg"><b>Aptidão em Barreira (BAR): </b>{personagem.aptidão.barreira}</h2>
-                            <h2 className="text-lg"><b>Aptidão em Domínio (DOM): </b>{personagem.aptidão.domínio}</h2>
-                            <h2 className="text-lg"><b>Aptidão em Energia Reversa (ER): </b>{personagem.aptidão.energia_reversa}</h2>
+                            <h2 className="text-lg"><b>Aptidão em Aura (AU): </b>{personagem.níveis_aptidão.aura}</h2>
+                            <h2 className="text-lg"><b>Aptidão em Controle e Leitura (CL): </b>{personagem.níveis_aptidão.controle_leitura}</h2>
+                            <h2 className="text-lg"><b>Aptidão em Barreira (BAR): </b>{personagem.níveis_aptidão.barreira}</h2>
+                            <h2 className="text-lg"><b>Aptidão em Domínio (DOM): </b>{personagem.níveis_aptidão.domínio}</h2>
+                            <h2 className="text-lg"><b>Aptidão em Energia Reversa (ER): </b>{personagem.níveis_aptidão.energia_reversa}</h2>
 
                         </ul>
 
@@ -41,7 +41,7 @@ export function AbaAptidões({personagem}:{personagem:Personagem}) {
 
             {/* Habilidades */}
             <ul className="max-w-300 flex flex-col items-center w-full gap-10 mt-10">
-                {personagem.aptidão.aptidões.map((aptidão, num)=>(
+                {personagem.aptidões.map((aptidão, num)=>(
 
                     <div key={num} className="w-full">
                         <h1 className="text-white text-shadow-lg/60 w-full text-right">Obtida no Nível {aptidão.obtida_no_nível}</h1>

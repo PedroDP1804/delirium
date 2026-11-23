@@ -18,11 +18,17 @@ export function SeçãoAtaques({personagem}:{personagem:Personagem}) {
     const modificador_sabedoria = modificador_atributo(personagem.atributos.sabedoria, personagem.bônus.atributos.sabedoria)
     const total_amaldiçoado = modificador_sabedoria + metade_nível + bônus_de_treinamento
     const informativo_amaldiçoado = `1d20\n+ ${modificador_sabedoria} (mod. sabedoria)\n+ ${metade_nível} (metade do nível)\n+ ${bônus_de_treinamento} (bônus de treinamento)\n= 1d20 + ${total_desarmado}`
+
+    // Leque
+    const modificador_destreza = modificador_atributo(personagem.atributos.destreza, personagem.bônus.atributos.destreza)
+    const total_leque = modificador_destreza + metade_nível + bônus_de_treinamento
+    const informativo_leque = `1d20\n+ ${modificador_destreza} (mod. destreza)\n+ ${metade_nível} (metade do nível)\n+ ${bônus_de_treinamento} (bônus de treinamento)\n= 1d20 + ${total_desarmado}`
     
 
     const ataques = [
-        {nome: "Ataque Desarmado", teste:`1d20 + ${total_desarmado}`, dano:"1d4", texto_informativo: informativo_desarmado},
+        {nome: "Ataque Desarmado", teste:`1d20 + ${total_desarmado}`, dano:"1d4 Im", texto_informativo: informativo_desarmado},
         {nome: "Ataque Amaldiçoado", teste:`1d20 + ${total_amaldiçoado}`, dano:"?", texto_informativo: informativo_amaldiçoado},
+        {nome: "Leque", teste:`1d20 + ${total_leque}`, dano:"1d6 + 2 Im/Ct", texto_informativo: informativo_leque},
     ]
 
     return(
