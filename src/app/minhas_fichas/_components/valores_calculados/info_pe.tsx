@@ -34,7 +34,7 @@ export function InfoPE({personagem}:InfoPEProps) {
     
     
     return (
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col min-[800px]:items-end">
             <h2 className="text-lg flex gap-1 items-center">
                 <b>PE: </b>
                 {personagem.stats.pe_atual} / {pe_max}

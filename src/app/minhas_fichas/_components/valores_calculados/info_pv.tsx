@@ -42,7 +42,7 @@ export function InfoPV({personagem}:InfoPVProps) {
     
     
     return (
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col min-[800px]:items-end">
             <h2 className="text-lg flex gap-1 items-center">
                 <b>PV: </b>
                 <span className={estilo_vida(personagem.stats.pv_atual, pv_max)}>{personagem.stats.pv_atual} / {pv_max}</span>
