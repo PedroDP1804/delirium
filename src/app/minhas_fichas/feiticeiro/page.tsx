@@ -7,6 +7,7 @@ import { AbaTécnica } from "../_components/aba_tecnica";
 import { AbaHabilidades } from "../_components/aba_habilidades";
 import { AbaAptidões } from "../_components/aba_aptidoes";
 import { AbaTestesEPerícias } from "../_components/aba_testes_pericias";
+import { AbaInventário } from "../_components/aba_inventario";
 
 export default function Home() {
 
@@ -34,6 +35,8 @@ export default function Home() {
             return <AbaAptidões personagem={angelo}/>
           case 4:
             return <AbaTestesEPerícias personagem={angelo}/>
+          case 5:
+            return <AbaInventário personagem={angelo}/>
           default:
             return null
         }

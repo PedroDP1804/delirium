@@ -3,7 +3,7 @@ export type Personagem = {
     origem: string,
     especializacao: string,
     nível: number,
-    grau: number,
+    grau: 4|3|2|1|"Especial",
     atributo_cd_especialização: ChaveAtributo,
     atributos: Atributos,
     stats: {
@@ -38,14 +38,20 @@ export type Personagem = {
     perícias: Perícias,
     testes_resistência: TestesResistência,
     habilidades: Habilidade[],
-    aptidão: {
+    níveis_aptidão: {
         aura: number,
         controle_leitura: number,
         barreira: number,
         domínio: number,
         energia_reversa: number,
-        aptidões: Habilidade[]
-    }
+    },
+    aptidões: Habilidade[],
+    inventário: {
+        nome: string,
+        descrição: string,
+        espaços: number,
+        custo: number
+    }[]
 }
 
 export type ChaveAtributo = "força" | "destreza" | "constituição" | "inteligência" | "sabedoria" | "presença"
@@ -83,6 +89,7 @@ export type Feitiço = {
     nome: string,
     nível: number,
     custo: number,
+    tipo: "Ativo" | "Passivo",
     caracteristicas: {
         cor: string,
         conjuração?: string,
