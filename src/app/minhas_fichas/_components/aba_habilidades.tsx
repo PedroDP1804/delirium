@@ -8,24 +8,24 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
     const niveis = Array(personagem.nível).fill(0)
 
     return (
-        <section className="w-[70%] flex flex-col items-center">
+        <section className="flex flex-col items-center">
 
-            <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
-                <div className="bg-white poligono1 h-full">
+            <div className="poligono1 h-max w-[90vw] max-w-300 max-[800px]:max-w-[500px] bg-black p-0.5 max-w-300 overflow-hidden relative">
+            <div className="bg-white poligono1 h-full">
 
-                    {/* Header */}
-                    <div className="h-24 border-b border-gray-500 pt-8">
-                        <h1 className="pl-5 font-jujutsu-titulo text-4xl">
-                            Habilidades
-                        </h1>
-                    </div>
-
+                {/* Header */}
+                <div className="h-24 border-b border-gray-500 pt-8">
+                    <h1 className="pl-5 font-jujutsu-titulo text-4xl">
+                        Habilidades
+                    </h1>
                 </div>
+
+            </div>
             </div>
 
 
             {/* Habilidades */}
-            <ul className="w-full">
+            <ul className="w-[90vw] max-w-300">
                 {niveis.map((_, num)=>(
                     <div key={num}>
 

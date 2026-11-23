@@ -16,48 +16,48 @@ export function AbaTécnica({personagem}:{personagem:Personagem}) {
         )
 
     return (
-        <section className="w-[70%] flex flex-col items-center">
+        <section className="w-full flex flex-col items-center">
 
-            <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
-                <div className="bg-white poligono1 h-full">
+            <div className="poligono1 h-max w-[90vw] max-w-300 max-[800px]:max-w-[500px] bg-black p-0.5 max-w-300 overflow-hidden relative">
+            <div className="bg-white poligono1 h-full w-full">
 
-                    {/* Header */}
-                    <div className="h-24 border-b border-gray-500 pt-8">
-                        <h1 className="pl-5 font-jujutsu-titulo text-4xl">
-                            Técnica Amaldiçoada
-                        </h1>
-                    </div>
+                {/* Header */}
+                <div className="h-24 border-b border-gray-500 pt-8">
+                    <h1 className="pl-5 font-jujutsu-titulo text-4xl">
+                        Técnica Amaldiçoada
+                    </h1>
+                </div>
 
-                    {/* Descrição */}
-                    <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
+                {/* Descrição */}
+                <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
 
-                        <h1 className="pl-3 font-jujutsu-titulo text-2xl">
-                            Descrição
-                        </h1>
+                    <h1 className="pl-3 font-jujutsu-titulo text-2xl">
+                        Descrição
+                    </h1>
 
-                        <p className="font-jujutsu whitespace-pre-wrap">
-                            {personagem.técnica?.descrição}
-                        </p>
+                    <p className="font-jujutsu whitespace-pre-wrap">
+                        {personagem.técnica?.descrição}
+                    </p>
 
-                    </div>
+                </div>
 
-                    {/* Informações */}
-                    <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
-                        <div className="text-left flex flex-col justify-between">
-                            
-                            <div>
-                                <InfoCDTécnica personagem={personagem}/>
+                {/* Informações */}
+                <div className="pt-5 pb-6 pl-3 pr-[10%] border-b border-gray-500">
+                    <div className="text-left flex flex-col justify-between">
+                        
+                        <div>
+                            <InfoCDTécnica personagem={personagem}/>
 
-                                <h2><b>Atributo CD: </b> {atributos_chave_nome[personagem.técnica?.atributo]}</h2>
-                            </div>
-
+                            <h2><b>Atributo CD: </b> {atributos_chave_nome[personagem.técnica?.atributo]}</h2>
                         </div>
 
                     </div>
 
-
-
                 </div>
+
+
+
+            </div>
             </div>
 
 
@@ -77,7 +77,7 @@ export function AbaTécnica({personagem}:{personagem:Personagem}) {
                 </div>
             </div>
 
-             <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
+             <ul className="h-full flex flex-col items-center w-[90vw] max-w-300 gap-10 mt-10">
                 {personagem.técnica.feitiços.map((h, i)=>(
                     <CardFeitico
                         key={i}
@@ -103,7 +103,7 @@ export function AbaTécnica({personagem}:{personagem:Personagem}) {
                 </div>
             </div>
 
-             <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
+             <ul className="h-full flex flex-col items-center w-[90vw] max-w-300 gap-10 mt-10">
                 {feiticos_futuros.map((h, i)=>(
                     <CardFeitico
                         key={i}

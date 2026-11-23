@@ -17,8 +17,23 @@ export function CardFeitico({hab}:CardFeiticoProps) {
 
                 {/* Nome da Hab */}
                 <CollapsibleTrigger className="w-full">
-                    <h1 className={`text-left indent-6 h-full pt-7 pb-6 text-shadow-sm text-shadow-black text-white ${estilo_de_cor.bg_nome} border-b border-black cursor-pointer font-bold text-xl`}>
+                    <h1 className={`
+                        max-[800px]:hidden
+                        h-full pt-7 pb-6 ${estilo_de_cor.bg_nome}
+                        text-left indent-6 font-bold text-xl text-shadow-sm text-shadow-black text-white
+                        border-b border-black cursor-pointer
+                    `}>
                         {hab.nome} | Feitiço {hab.tipo == "Passivo" && "Passivo "}Nível {hab.nível} | {hab.tipo == "Ativo" ? `${hab.custo} PE` : `-${hab.custo} PE max`}
+                    </h1>
+                    <h1 className={`
+                        min-[800px]:hidden
+                        h-full pt-7 pb-6 ${estilo_de_cor.bg_nome}
+                        text-left p-6 font-bold text-xl text-shadow-sm text-shadow-black text-white whitespace-pre-wrap
+                        border-b border-black cursor-pointer
+                    `}>
+                        {hab.nome}{"\n"}
+                        Feitiço {hab.tipo == "Passivo" && "Passivo "}Nível {hab.nível}{"\n"}
+                        {hab.tipo == "Ativo" ? `${hab.custo} PE` : `-${hab.custo} PE max`}
                     </h1>
                 </CollapsibleTrigger>
 
@@ -53,7 +68,11 @@ export function CardFeitico({hab}:CardFeiticoProps) {
                     <Collapsible className="w-full flex flex-col">
                     
                         <CollapsibleTrigger>
-                            <h2 className={`text-shadow-md/60 text-left indent-6 h-full w-full py-2 text-white ${estilo_de_cor.bg_secoes} border-y border-black cursor-pointer font-bold text-lg`}>
+                            <h2 className={`
+                                h-full w-full py-2 ${estilo_de_cor.bg_secoes}
+                                border-y border-black cursor-pointer
+                                font-bold text-lg text-left indent-6 text-white text-shadow-md/60
+                            `}>
                                 Descrição
                             </h2>
                         </CollapsibleTrigger>

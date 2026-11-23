@@ -41,9 +41,9 @@ export function AbaInventário({personagem}:{personagem:Personagem}) {
     })
 
     return (
-        <section className="w-[70%] flex flex-col items-center">
+        <section className="flex flex-col items-center">
 
-            <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
+            <div className="poligono1 h-max bg-black p-0.5 w-[90vw] max-w-300 max-[800px]:max-w-[500px] overflow-hidden relative">
                 <div className="bg-white poligono1 h-full">
 
                     {/* Header */}
@@ -79,12 +79,19 @@ export function AbaInventário({personagem}:{personagem:Personagem}) {
             </div>
 
             {/* Tabela de itens */}
-            <div className="bg-black w-full poligono2 p-0.5 mt-12">
+            <div className="bg-black w-[90vw] max-w-300 max-[800px]:max-w-[500px] poligono2 p-0.5 mt-12">
             <div className="bg-white w-full poligono2 pb-6">
             <table className="w-full">
 
                 {/* Cabeçalho */}
-                <thead><tr className="h-12 text-xl">
+                <thead><tr className="min-[800px]:hidden h-12 text-xl">
+                    {["Item", "Desc.", "Espaços", "Custo"].map((header, index)=>(
+                        <th key={index} className="px-1 w-1/4 border-x border-b border-[#777]">
+                            {header}
+                        </th>
+                    ))}
+                </tr></thead>
+                <thead><tr className="max-[800px]:hidden h-12 text-xl">
                     {["Item", "Descrição", "Espaços", "Custo"].map((header, index)=>(
                         <th key={index} className="w-1/4 border-x border-b border-[#777]">
                             {header}
@@ -97,11 +104,14 @@ export function AbaInventário({personagem}:{personagem:Personagem}) {
                     {personagem.inventário.map((item, index)=>(
                         <tr key={index} className="text-lg h-10 border border-[#999]">
 
-                            <td className="border border-[#777] text-center">
-                                <h2 className="indent-3">{item.nome}</h2>
+                            <td className="min-[800px]:hidden border border-[#777] text-center">
+                                <h2 className="mx-1 text-sm">{item.nome}</h2>
+                            </td>
+                            <td className="max-[800px]:hidden border border-[#777] text-center">
+                                <h2 className="mx-1">{item.nome}</h2>
                             </td>
 
-                            <td className="border border-[#777] text-center pt-2 pl-2">
+                            <td className="border border-[#777] text-center pt-2">
                             <InformativoGrande
                                 titulo="Descrição"
                                 texto={item.descrição}
@@ -110,11 +120,11 @@ export function AbaInventário({personagem}:{personagem:Personagem}) {
                             </td>
 
                             <td className="border border-[#777] text-center">
-                                <h2 className="indent-3">{item.espaços}</h2>
+                                <h2 className="mx-1">{item.espaços}</h2>
                             </td>
 
                             <td className="border border-[#777] text-center">
-                                <h2 className="indent-3">{item.custo}</h2>
+                                <h2 className="mx-1">{item.custo}</h2>
                             </td>
 
                         </tr>

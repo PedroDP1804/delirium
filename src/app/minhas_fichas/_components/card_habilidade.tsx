@@ -15,7 +15,7 @@ export function CardHabilidade({habilidade}:CardHabilidadeProps) {
 
                 {/* Nome da Hab */}
                 <CollapsibleTrigger className="w-full bg-white">
-                    <h1 className="text-left indent-6 h-full pt-7 pb-6 text-shadow-sm text-shadow-gray-300 text-black border-b border-black cursor-pointer font-bold text-xl">
+                    <h1 className="text-left px-6 h-full pt-7 pb-6 text-shadow-sm text-shadow-gray-300 text-black border-b border-black cursor-pointer font-bold text-xl">
                         {habilidade.nome} | {habilidade.tipo}
                     </h1>
                 </CollapsibleTrigger>

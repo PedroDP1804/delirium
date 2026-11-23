@@ -4,14 +4,14 @@ import { CardHabilidade } from "./card_habilidade";
 export function AbaAptidões({personagem}:{personagem:Personagem}) {
 
     return (
-        <section className="w-[70%] flex flex-col items-center">
+        <section className="flex flex-col items-center">
 
-            <div className="poligono1 h-max w-full bg-black p-0.5 max-w-300 overflow-hidden relative">
-                <div className="bg-white poligono1 h-full">
+            <div className="poligono1 h-max w-[90vw] max-w-300 max-[800px]:max-w-[500px] bg-black p-0.5 max-w-300 overflow-hidden relative">
+                <div className="bg-white poligono1 h-full w-full">
 
                     {/* Header */}
-                    <div className="h-24 border-b border-gray-500 pt-8">
-                        <h1 className="pl-5 font-jujutsu-titulo text-4xl">
+                    <div className="min-h-24 border-b border-gray-500 pt-8">
+                        <h1 className="px-5 font-jujutsu-titulo text-4xl">
                             Aptidões Amaldiçoadas
                         </h1>
                     </div>
@@ -40,7 +40,7 @@ export function AbaAptidões({personagem}:{personagem:Personagem}) {
 
 
             {/* Habilidades */}
-            <ul className="max-w-300 flex flex-col items-center w-full gap-10 mt-10">
+            <ul className="w-[90vw] max-w-300 flex flex-col items-center gap-10 mt-10">
                 {personagem.aptidões.map((aptidão, num)=>(
 
                     <div key={num} className="w-full">
