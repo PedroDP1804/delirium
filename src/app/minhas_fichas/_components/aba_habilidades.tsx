@@ -42,7 +42,7 @@ export function AbaHabilidades({personagem}:{personagem:Personagem}) {
                                     Nível {num+1}
                                 </h1>
                             </div>
-                        </div>'
+                        </div>
 
                         <ul className="h-full flex flex-col items-center w-full gap-10 mt-10">
                             {

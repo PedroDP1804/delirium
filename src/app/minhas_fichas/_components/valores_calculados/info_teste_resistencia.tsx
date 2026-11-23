@@ -1,5 +1,5 @@
 import { bônus_treinamento, modificador_atributo, multiplicador_treinamento } from "@/src/lib/FM/funcoes_personagem";
-import { type Atributos, type Perícias, type Personagem, perícias_atributos, type TestesResistência, resistencia_atributos } from "@/src/lib/FM/personagem";
+import { type Atributos, type Personagem, type TestesResistência, resistencia_atributos } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { Dices } from "lucide-react";
 

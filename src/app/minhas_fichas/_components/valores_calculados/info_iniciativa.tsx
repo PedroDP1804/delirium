@@ -1,7 +1,7 @@
 import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
-import { bônus_treinamento, modificador_atributo, multiplicador_treinamento } from "@/src/lib/FM/funcoes_personagem";
+import { modificador_atributo } from "@/src/lib/FM/funcoes_personagem";
 
 type InfoIniciativaProps = {
     personagem: Personagem

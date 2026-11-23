@@ -34,7 +34,7 @@ export function AbaInventário({personagem}:{personagem:Personagem}) {
 
 
     let espaços_usados = 0
-    let custos_usados = {custo_1:0, custo_2:0, custo_3:0, custo_4:0}
+    const custos_usados = {custo_1:0, custo_2:0, custo_3:0, custo_4:0}
     personagem.inventário.forEach((item)=>{
         espaços_usados += item.espaços
         custos_usados[`custo_${item.custo}` as keyof typeof custos_usados] += 1

@@ -1,5 +1,5 @@
 import { } from "@/src/lib/FM/funcoes_personagem"
-import { atributos_chave_nome, type Atributos, type Personagem } from "@/src/lib/FM/personagem"
+import { atributos_chave_nome, type Personagem } from "@/src/lib/FM/personagem"
 import { CardFeitico } from "./card_feitico"
 import { feiticos_futuros } from "@/src/lib/FM/angelo"
 import { InfoCDTécnica } from "./valores_calculados/info_cd_tecnica"
@@ -48,7 +48,7 @@ export function AbaTécnica({personagem}:{personagem:Personagem}) {
                             <div>
                                 <InfoCDTécnica personagem={personagem}/>
 
-                                <h2><b>Atributo CD: </b> {atributos_chave_nome[personagem.técnica?.atributo as keyof Atributos]}</h2>
+                                <h2><b>Atributo CD: </b> {atributos_chave_nome[personagem.técnica?.atributo]}</h2>
                             </div>
 
                         </div>

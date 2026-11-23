@@ -1,4 +1,4 @@
-import { type Atributos, type Personagem } from "@/src/lib/FM/personagem";
+import { type Personagem } from "@/src/lib/FM/personagem";
 import { Informativo } from "../informativo";
 import { ScanSearch } from "lucide-react";
 import { bônus_treinamento, modificador_atributo } from "@/src/lib/FM/funcoes_personagem";
@@ -10,7 +10,7 @@ type InfoCDEspecializaçãoProps = {
 export function InfoCDEspecialização({personagem}:InfoCDEspecializaçãoProps) {
 
     // Atributo
-    const chave_atributo = personagem.atributo_cd_especialização as keyof Atributos
+    const chave_atributo = personagem.atributo_cd_especialização
     const atributo_base = personagem.atributos[chave_atributo]
     const lista_bônus_atributo = personagem.bônus.atributos[chave_atributo]
 

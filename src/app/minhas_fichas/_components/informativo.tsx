@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/src/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/src/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/src/components/ui/tooltip"
 import type { JSX } from "react";
 
