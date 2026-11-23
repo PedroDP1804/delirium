@@ -10,12 +10,12 @@ type InfoPEProps = {
 export function InfoPE({personagem}:InfoPEProps) {
 
     // Apelidos
-    const inteligencia_base = personagem.atributos.inteligência
-    const lista_bônus_inteligencia = personagem.bônus.atributos.inteligência
+    const sabedoria_base = personagem.atributos.sabedoria
+    const lista_bônus_sabedoria = personagem.bônus.atributos.sabedoria
     const nível = personagem.nível
 
-    //calcular modificador de inteligência
-    const modificador_inteligencia = modificador_atributo(inteligencia_base, lista_bônus_inteligencia)
+    //calcular modificador de sabedoria
+    const modificador_sabedoria = modificador_atributo(sabedoria_base, lista_bônus_sabedoria)
 
     // calcular bônus pe total
     let bônus_pe = 0
@@ -23,13 +23,13 @@ export function InfoPE({personagem}:InfoPEProps) {
 
     // gerar texto do informativo
     let texto_info =    `${nível} niveis, +6 por nível (Base Especialização)`
-                        + `\n+ ${modificador_inteligencia} (mod. int.)`
+                        + `\n+ ${modificador_sabedoria} (mod. sabedoria)`
     personagem.bônus.pe_max.forEach((bônus)=>{texto_info += `\n+${bônus.valor} (${bônus.fonte})`})
-    texto_info += `\n= (${nível} x 6) + ${modificador_inteligencia}`
+    texto_info += `\n= (${nível} x 6) + ${modificador_sabedoria}`
     personagem.bônus.pe_max.forEach((bônus)=>{texto_info += ` + ${bônus.valor}`})
 
     // calcular pe max
-    const pe_max = (nível )*6 + modificador_inteligencia + bônus_pe
+    const pe_max = (nível )*6 + modificador_sabedoria + bônus_pe
     texto_info += `\n= ${pe_max}`
     
     

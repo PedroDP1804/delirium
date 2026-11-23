@@ -1,4 +1,4 @@
 >Abas do Personagem:
-    -Inventário
     -Descrição (na Principal agr)
 >Filtro por cor na aba Feitiços
+>Ajeitar as descrições dos itens
