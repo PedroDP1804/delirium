@@ -27,7 +27,7 @@ export function AbaPrincipal({personagem}:{personagem:Personagem}) {
 
                     <div className="text-lg">
                         <h2><b>Origem: </b>{personagem.origem}</h2>
-                        <h2><b>Especialização: </b>{personagem.especializacao}</h2>
+                        <h2><b>Especialização: </b>{personagem.especialização}</h2>
                         <h2 className="font-bold">Técnica:{' '}
                             <span className="text-[#ff0000]">A</span>
                             <span className="text-[#ff7300]">q</span>

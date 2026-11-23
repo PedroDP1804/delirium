@@ -157,7 +157,7 @@ const feiticos_angelo:Feitiço[] = [
 export const angelo:Personagem = {
     nome: "Ângelo Algumacoisa",
     origem: "Inato",
-    especializacao: "Especialista em Técnica",
+    especialização: "Especialista em Técnica",
     nível: 2,
     grau: 4,
     atributo_cd_especialização: "sabedoria",

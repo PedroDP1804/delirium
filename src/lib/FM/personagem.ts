@@ -1,7 +1,7 @@
 export type Personagem = {
     nome:string,
     origem: string,
-    especializacao: string,
+    especialização: string,
     nível: number,
     grau: 4|3|2|1|"Especial",
     atributo_cd_especialização: ChaveAtributo,

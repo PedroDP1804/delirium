@@ -39,7 +39,7 @@ export function InfoCDEspecialização({personagem}:InfoCDEspecializaçãoProps)
     
     return (
             <h2 className="text-lg flex gap-1 items-center">
-                <b>CD Especializacao: </b>
+                <b>CD Especialização: </b>
                 {cd_especialização}
                 <Informativo texto={texto_info} icone={<ScanSearch color="#777777"/>}/>
             </h2>

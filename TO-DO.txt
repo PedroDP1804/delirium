@@ -1,4 +1,22 @@
 >Abas do Personagem:
     -Descrição (na Principal agr)
->Filtro por cor na aba Feitiços
+>Responsividade
 >Ajeitar as descrições dos itens
+
+>Filtro por cor na aba Feitiços
+>Botões pra aumentar/diminuir pv etc
+>Pequenos ajustes
+    -Atributos variáveis (ex. cd tecnica)
+    -Corrigir caso de grau especial
+    -mostrar RDs, vulnerabilidades e imunidades
+    -Coisas q variam com a especialização (ex dado de vida e PE)
+    -ajeitar formatação de 'bônus' negativos
+
+
+
+>caminho -> /rpg/f-m/fichas/angelo
+>fazer as paginas do caminho
+>componente de autenticação
+>componentizar tudo pra diferentes sistemas
+>tirar hardcoded e pôr BD
+>subir BD
