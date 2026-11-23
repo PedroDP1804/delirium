@@ -1,16 +1,15 @@
 >Abas do Personagem:
     -Descrição (na Principal agr)
->Responsividade
 >Ajeitar as descrições dos itens
 
+>Pequenos ajustes
+    -Corrigir caso de grau especial
+    -ajeitar formatação de 'bônus' negativos
+>Coisas q variam com a especialização (ex dado de vida e PE)
+>mostrar RDs, vulnerabilidades e imunidades
 >Filtro por cor na aba Feitiços
 >Botões pra aumentar/diminuir pv etc
->Pequenos ajustes
-    -Atributos variáveis (ex. cd tecnica)
-    -Corrigir caso de grau especial
-    -mostrar RDs, vulnerabilidades e imunidades
-    -Coisas q variam com a especialização (ex dado de vida e PE)
-    -ajeitar formatação de 'bônus' negativos
+>Atributos variáveis (ex. cd tecnica)
 
 
 
