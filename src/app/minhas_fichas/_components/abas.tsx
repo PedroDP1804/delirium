@@ -49,7 +49,7 @@ export function Abas({funcao, atual}:AbasProps) {
                 </button>
                 
                 <h2 className="py-3 px-10 text-center w-55 cursor-pointer hover:bg-gray-200 rounded-md text-xl text-shadow-lg">
-                    {abas.filter((aba)=>(aba.indice == atual))[0]?.texto}
+                    {abas.find((aba)=>(aba.indice == atual))?.texto}
                 </h2>
 
                 <button className="mx-2" onClick={()=>{funcao(atual < 5 ? atual+1 : 0)}}>
